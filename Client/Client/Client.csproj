@@ -76,6 +76,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Models\Bar.cs" />
+    <Compile Include="Models\Product.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -5,6 +5,7 @@ namespace Client
     {
         public Bar()
         {
+
         }
     }
 }
