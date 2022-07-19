@@ -1,1 +1,38 @@
+19/07/2022
+
+1. Add Cinema Room	(Admin)
+Безолюк, Гамалій, Гарькавий
+Create a base class with integer array for the seats;
+Create a class inhereted from the base class for a particular room;
+Create a form with seats configuration displaying;
+
+
+2. Create Afisha 
+Фроляк, Перетятькр
+Create a form with:
+- date;
+- display time of movie start;
+- display name of movie;
+- link to youtube?
+- button Book;
+- button Buy;
+
+
+3. Create Movie class with:
+Капелюшні, Згурський
+- movie name;
+- link to youtube;
+- description;
+- button Comment;
+- widget for rating;
+
+
+4. Create Bar class in client project with:
+Мелащенко, Тереб, Турніцький
+- properties for goods;
+- calculate profit;
+
+
+5. Архітектура кліентського проекту
+Липник, Куцуліма
 
