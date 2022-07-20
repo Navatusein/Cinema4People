@@ -49,13 +49,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbTitle = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btAddMovie = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 383);
+            this.label10.Location = new System.Drawing.Point(12, 347);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(70, 13);
@@ -72,7 +73,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Location = new System.Drawing.Point(6, 232);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(431, 142);
+            this.groupBox1.Size = new System.Drawing.Size(431, 106);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Actor";
@@ -178,7 +179,7 @@
             // cbActors
             // 
             this.cbActors.FormattingEnabled = true;
-            this.cbActors.Location = new System.Drawing.Point(115, 380);
+            this.cbActors.Location = new System.Drawing.Point(115, 344);
             this.cbActors.Name = "cbActors";
             this.cbActors.Size = new System.Drawing.Size(314, 21);
             this.cbActors.TabIndex = 31;
@@ -248,11 +249,21 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Title";
             // 
+            // btAddMovie
+            // 
+            this.btAddMovie.Location = new System.Drawing.Point(12, 380);
+            this.btAddMovie.Name = "btAddMovie";
+            this.btAddMovie.Size = new System.Drawing.Size(417, 23);
+            this.btAddMovie.TabIndex = 34;
+            this.btAddMovie.Text = "Add movie";
+            this.btAddMovie.UseVisualStyleBackColor = true;
+            // 
             // AddMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 415);
+            this.Controls.Add(this.btAddMovie);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tbGenre);
@@ -300,5 +311,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbTitle;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btAddMovie;
     }
 }
