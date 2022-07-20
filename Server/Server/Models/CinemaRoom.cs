@@ -9,7 +9,7 @@ namespace Server.Models
     /// <summary>
     /// Клас комнаты
     /// </summary>
-    internal class CinemaRoom
+    public class CinemaRoom
     {
         // зделать ценовую политику
         int roomId;//номер 

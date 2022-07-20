@@ -13,20 +13,43 @@ namespace Server
 {
     public partial class FormMain : Form
     {
-        List<CinemaRoom> rooms;
-        int counter = 0;
+        List<CinemaRoom> rooms = null;
+
+        public List<CinemaRoom> Rooms 
+        {
+            get { return rooms; } 
+            set { rooms = value; } 
+        }
+
         public FormMain()
         {
             InitializeComponent();
-            btAdd.Enabled = false;
-            lbRooms.DataSource = rooms;
-            NewRoomSettingsTable.AllowUserToAddRows = true;
-            NewRoomSettingsTable.DefaultValuesNeeded += NewRoomSettingsTable_DefaultValuesNeeded1;
+            rooms = new List<CinemaRoom>();
+            lbRooms.DataSource = Rooms;
         }
 
-        private void NewRoomSettingsTable_DefaultValuesNeeded1(object sender, DataGridViewRowEventArgs e)
+        public FormMain(List<CinemaRoom> cinemaRooms)
+        {
+            InitializeComponent();
+            Rooms = cinemaRooms;
+            lbRooms.DataSource = cinemaRooms;
+        }
+
+        private void NewRoomSettingsTable_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
             NewRoomSettingsTable.Rows[e.Row.Index].Cells["rowIndex"].Value = e.Row.Index + 1;
+        }
+
+        private void NewRoomSettingsTable_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if(!string.IsNullOrEmpty(tbRoomName.Text))
+                btAdd.Enabled = true;
+        }
+
+        private void tbRoomName_TextChanged(object sender, EventArgs e)
+        {
+            if(NewRoomSettingsTable.Rows.Count > 1)
+                btAdd.Enabled=true;
         }
     }
 }

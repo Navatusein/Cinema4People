@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.lbRooms = new System.Windows.Forms.ListBox();
             this.NewRoomSettingsTable = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbRoomName = new System.Windows.Forms.TextBox();
             this.btAdd = new System.Windows.Forms.Button();
             this.rowIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,11 +72,13 @@
             this.NewRoomSettingsTable.Name = "NewRoomSettingsTable";
             this.NewRoomSettingsTable.Size = new System.Drawing.Size(316, 272);
             this.NewRoomSettingsTable.TabIndex = 31;
+            this.NewRoomSettingsTable.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.NewRoomSettingsTable_DefaultValuesNeeded);
+            this.NewRoomSettingsTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.NewRoomSettingsTable_RowsAdded);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbRoomName);
             this.groupBox1.Controls.Add(this.btAdd);
             this.groupBox1.Controls.Add(this.NewRoomSettingsTable);
             this.groupBox1.Location = new System.Drawing.Point(211, 12);
@@ -95,15 +97,17 @@
             this.label5.TabIndex = 46;
             this.label5.Text = "Room name:";
             // 
-            // textBox1
+            // tbRoomName
             // 
-            this.textBox1.Location = new System.Drawing.Point(94, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 45;
+            this.tbRoomName.Location = new System.Drawing.Point(94, 19);
+            this.tbRoomName.Name = "tbRoomName";
+            this.tbRoomName.Size = new System.Drawing.Size(100, 20);
+            this.tbRoomName.TabIndex = 45;
+            this.tbRoomName.TextChanged += new System.EventHandler(this.tbRoomName_TextChanged);
             // 
             // btAdd
             // 
+            this.btAdd.Enabled = false;
             this.btAdd.Location = new System.Drawing.Point(212, 18);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(105, 21);
@@ -122,9 +126,8 @@
             // colAmount
             // 
             this.colAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = "1";
-            this.colAmount.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "N2";
+            this.colAmount.DefaultCellStyle = dataGridViewCellStyle3;
             this.colAmount.FillWeight = 111.9289F;
             this.colAmount.HeaderText = "Amount in this row";
             this.colAmount.Name = "colAmount";
@@ -132,9 +135,8 @@
             // tbPrice
             // 
             this.tbPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = "0.01";
-            this.tbPrice.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Format = "C2";
+            this.tbPrice.DefaultCellStyle = dataGridViewCellStyle4;
             this.tbPrice.FillWeight = 76.14214F;
             this.tbPrice.HeaderText = "Single seat price";
             this.tbPrice.Name = "tbPrice";
@@ -164,7 +166,7 @@
         private System.Windows.Forms.DataGridView NewRoomSettingsTable;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbRoomName;
         private System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn rowIndex;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAmount;
