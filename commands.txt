@@ -2,8 +2,8 @@
 
 1. Add Cinema Room	(Admin)
 Безолюк, Гамалій, Гарькавий
-Create a base class with integer array for the seats;
-Create a class inhereted from the base class for a particular room;
+Create a base class with an integer array for the seats;
+Create a class inherited from the base class for a particular room;
 Create a form with seats configuration displaying;
 
 
@@ -12,13 +12,13 @@ Create a form with seats configuration displaying;
 Create a form with:
 - date;
 - display time of movie start;
-- display name of movie;
-- link to youtube?
+- display the name of the movie;
+- a link to youtube?
 - button Book;
 - button Buy;
 
 
-3. Create Movie class with:
+3. Create a Movie class with:
 Капелюшні, Згурський
 - movie name;
 - link to youtube;
