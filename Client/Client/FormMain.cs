@@ -26,6 +26,7 @@ namespace Client
             panelForm.Controls.Clear();
 
             TabAfisha tab = new TabAfisha();
+            //TabFilm tab = new TabFilm();
 
             panelForm.Controls.Add(tab);
 

@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace Client.Tabs
 {
-    public partial class TabFilm : Form
+    public partial class TabTemplate : Form
     {
-        public TabFilm()
+        public TabTemplate()
         {
             InitializeComponent();
-
-            this.TopLevel = false;
-            this.Dock = DockStyle.Fill;
-            this.TopMost = true;
-        }
-
-        private void panelContext_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
