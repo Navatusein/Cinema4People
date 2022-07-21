@@ -30,7 +30,8 @@
         {
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btAddActor = new System.Windows.Forms.Button();
+            this.btSelectActorPhoto = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.tbActorRole = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,13 +51,15 @@
             this.tbTitle = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btAddMovie = new System.Windows.Forms.Button();
+            this.btDeleteActor = new System.Windows.Forms.Button();
+            this.ofd1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 347);
+            this.label10.Location = new System.Drawing.Point(12, 360);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(70, 13);
@@ -65,7 +68,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btAddActor);
+            this.groupBox1.Controls.Add(this.btSelectActorPhoto);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.tbActorRole);
             this.groupBox1.Controls.Add(this.label8);
@@ -73,19 +77,30 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Location = new System.Drawing.Point(6, 232);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(431, 106);
+            this.groupBox1.Size = new System.Drawing.Size(431, 119);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Actor";
             // 
-            // button1
+            // btAddActor
             // 
-            this.button1.Location = new System.Drawing.Point(109, 62);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(314, 23);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Select poster";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btAddActor.Location = new System.Drawing.Point(348, 91);
+            this.btAddActor.Name = "btAddActor";
+            this.btAddActor.Size = new System.Drawing.Size(75, 23);
+            this.btAddActor.TabIndex = 23;
+            this.btAddActor.Text = "Add actor";
+            this.btAddActor.UseVisualStyleBackColor = true;
+            this.btAddActor.Click += new System.EventHandler(this.btAddActor_Click);
+            // 
+            // btSelectActorPhoto
+            // 
+            this.btSelectActorPhoto.Location = new System.Drawing.Point(109, 62);
+            this.btSelectActorPhoto.Name = "btSelectActorPhoto";
+            this.btSelectActorPhoto.Size = new System.Drawing.Size(314, 23);
+            this.btSelectActorPhoto.TabIndex = 22;
+            this.btSelectActorPhoto.Text = "Select actor\'s photo";
+            this.btSelectActorPhoto.UseVisualStyleBackColor = true;
+            this.btSelectActorPhoto.Click += new System.EventHandler(this.btSelectActorPhoto_Click);
             // 
             // label9
             // 
@@ -93,9 +108,9 @@
             this.label9.Location = new System.Drawing.Point(6, 67);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(102, 13);
+            this.label9.Size = new System.Drawing.Size(69, 13);
             this.label9.TabIndex = 21;
-            this.label9.Text = "Select actor\'s image";
+            this.label9.Text = "Actor\'s phoot";
             // 
             // tbActorRole
             // 
@@ -157,6 +172,7 @@
             this.btSelect.TabIndex = 28;
             this.btSelect.Text = "Select poster";
             this.btSelect.UseVisualStyleBackColor = true;
+            this.btSelect.Click += new System.EventHandler(this.btSelect_Click);
             // 
             // label4
             // 
@@ -179,7 +195,7 @@
             // cbActors
             // 
             this.cbActors.FormattingEnabled = true;
-            this.cbActors.Location = new System.Drawing.Point(115, 344);
+            this.cbActors.Location = new System.Drawing.Point(115, 357);
             this.cbActors.Name = "cbActors";
             this.cbActors.Size = new System.Drawing.Size(314, 21);
             this.cbActors.TabIndex = 31;
@@ -251,18 +267,34 @@
             // 
             // btAddMovie
             // 
-            this.btAddMovie.Location = new System.Drawing.Point(12, 380);
+            this.btAddMovie.Location = new System.Drawing.Point(12, 413);
             this.btAddMovie.Name = "btAddMovie";
             this.btAddMovie.Size = new System.Drawing.Size(417, 23);
             this.btAddMovie.TabIndex = 34;
             this.btAddMovie.Text = "Add movie";
             this.btAddMovie.UseVisualStyleBackColor = true;
+            this.btAddMovie.Click += new System.EventHandler(this.btAddMovie_Click);
+            // 
+            // btDeleteActor
+            // 
+            this.btDeleteActor.Location = new System.Drawing.Point(354, 384);
+            this.btDeleteActor.Name = "btDeleteActor";
+            this.btDeleteActor.Size = new System.Drawing.Size(75, 23);
+            this.btDeleteActor.TabIndex = 24;
+            this.btDeleteActor.Text = "Delete actor";
+            this.btDeleteActor.UseVisualStyleBackColor = true;
+            this.btDeleteActor.Click += new System.EventHandler(this.btDeleteActor_Click);
+            // 
+            // ofd1
+            // 
+            this.ofd1.FileName = "openFileDialog1";
             // 
             // AddMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 415);
+            this.ClientSize = new System.Drawing.Size(444, 444);
+            this.Controls.Add(this.btDeleteActor);
             this.Controls.Add(this.btAddMovie);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
@@ -292,7 +324,7 @@
 
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btSelectActorPhoto;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tbActorRole;
         private System.Windows.Forms.Label label8;
@@ -312,5 +344,8 @@
         private System.Windows.Forms.TextBox tbTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btAddMovie;
+        private System.Windows.Forms.Button btAddActor;
+        private System.Windows.Forms.Button btDeleteActor;
+        private System.Windows.Forms.OpenFileDialog ofd1;
     }
 }
