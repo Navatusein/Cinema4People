@@ -66,6 +66,12 @@
     <Compile Include="Tabs\TabFilm.Designer.cs">
       <DependentUpon>TabFilm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\TabTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabs\TabTemplate.Designer.cs">
+      <DependentUpon>TabTemplate.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tabs\TabFilm.resx">
       <DependentUpon>TabFilm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabs\TabTemplate.resx">
+      <DependentUpon>TabTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
