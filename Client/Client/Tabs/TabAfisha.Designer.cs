@@ -44,9 +44,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCardsDock.AutoScroll = true;
             this.panelCardsDock.AutoScrollMargin = new System.Drawing.Size(0, 12);
+            this.panelCardsDock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.panelCardsDock.Location = new System.Drawing.Point(0, 35);
             this.panelCardsDock.Name = "panelCardsDock";
-            this.panelCardsDock.Size = new System.Drawing.Size(580, 415);
+            this.panelCardsDock.Size = new System.Drawing.Size(800, 415);
             this.panelCardsDock.TabIndex = 0;
             // 
             // panel1
@@ -55,7 +56,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.panel1.Controls.Add(this.buttonFilter);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(220, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(580, 35);
             this.panel1.TabIndex = 1;
@@ -85,8 +86,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(580, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelCardsDock);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

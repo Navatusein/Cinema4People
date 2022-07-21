@@ -22,12 +22,23 @@ namespace Client
 
 
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            panelForm.Controls.Clear();
+
+            TabAfisha tab = new TabAfisha();
+
+            panelForm.Controls.Add(tab);
+
+            tab.Show();
         }
+
+
 
         private void buttonTabAfisha_Click(object sender, EventArgs e)
         {
             if (!(sender is Button))
                 return;
+
             if (lastButton != null)
                 lastButton.BackColor = Color.Transparent;
 
@@ -35,10 +46,7 @@ namespace Client
 
             lastButton.BackColor = Color.FromArgb(31, 31, 31);
 
-            panelForm.Controls.Clear();
-            TabAfisha tab = new TabAfisha();
-            panelForm.Controls.Add(tab);
-            tab.Show();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
