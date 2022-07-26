@@ -61,7 +61,8 @@ namespace Server
                 size[i,0] = Convert.ToInt32(NewRoomSettingsTable.Rows[i].Cells["colAmount"].Value);
                 size[i,1] = Convert.ToInt32(NewRoomSettingsTable.Rows[i].Cells["tbPrice"].Value);
             }
-            CinemaRoom room = new CinemaRoom(size, tbRoomName.Text);
+            CinemaRoom room = new CinemaRoom(size, tbRoomName.Text); 
+
             rooms.Add(room);
         }
     }
