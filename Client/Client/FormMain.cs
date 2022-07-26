@@ -20,44 +20,66 @@ namespace Client
         {
             InitializeComponent();
 
-
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-        }
-
-        private void buttonTabAfisha_Click(object sender, EventArgs e)
-        {
-            if (!(sender is Button))
-                return;
-            if (lastButton != null)
-                lastButton.BackColor = Color.Transparent;
-
-            lastButton = sender as Button;
-
-            lastButton.BackColor = Color.FromArgb(31, 31, 31);
 
             panelForm.Controls.Clear();
-            TabAfisha tab = new TabAfisha();
-            panelForm.Controls.Add(tab);
-            tab.Show();
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (!(sender is Button))
-                return;
-
-            if (lastButton != null)
-                lastButton.BackColor = Color.Transparent;
-
-            lastButton = sender as Button;
-
-            lastButton.BackColor = Color.FromArgb(31, 31, 31);
-
-            lastButton = sender as Button;
-            panelForm.Controls.Clear();
+            //TabAfisha tab = new TabAfisha();
             TabFilm tab = new TabFilm();
+
+            panelForm.Controls.Add(tab);
+
+            tab.Show();
+        }
+
+        private void btCheckout_Click(object sender, EventArgs e)
+        {
+            if (!(sender is Button))
+                return;
+            /*
+            lastButton = sender as Button;
+            panelForm.Controls.Clear();
+            TabFilm tab = new TabFilm(); --- hook click on movie
             panelForm.Controls.Add(tab);
             tab.Show();
+            */
+        }
+
+        private void btMain_Click(object sender, EventArgs e)
+        {
+            if (!(sender is Button))
+                return;
+
+            lastButton = sender as Button;
+
+            panelForm.Controls.Clear();
+
+            TabAfisha tab = new TabAfisha();
+
+            panelForm.Controls.Add(tab);
+
+            tab.Show();
+        }
+
+        private void btBack_Click(object sender, EventArgs e)
+        {
+            //if (panelForm.Controls[0] is TabAfisha) return;
+            //if (panelForm.Controls[0] is TabFilm)
+            //{
+            //    btMain_Click(sender, e);
+            //}
+            //else
+            //{
+            //    if (panelForm.Controls[0] is TabCheckout)
+            //    {
+            //        lastButton = sender as Button;
+
+            //        panelForm.Controls.Clear();
+            //        TabFilm tab = new TabFilm();
+            //        panelForm.Controls.Add(tab);
+            //        tab.Show();
+            //    }
+            //}
         }
     }
 }

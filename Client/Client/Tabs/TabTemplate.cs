@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Server
+namespace Client.Tabs
 {
-    public partial class FormMain : Form
+    public partial class TabTemplate : Form
     {
-        public FormMain()
+        public TabTemplate()
         {
             InitializeComponent();
         }

@@ -20,5 +20,10 @@ namespace Client.Tabs
             this.Dock = DockStyle.Fill;
             this.TopMost = true;
         }
+
+        private void panelContext_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

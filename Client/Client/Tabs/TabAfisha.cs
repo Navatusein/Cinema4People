@@ -31,12 +31,12 @@ namespace Client.Tabs
         {
             int cardsCount = 0;
     
-            int cardsInRow = panelCardsDock.Width / cardSize.Width;
+            int cardsInRow = panelContext.Width / cardSize.Width;
 
-            int locationX = ((panelCardsDock.Width - 16) - (cardsInRow * cardSize.Width)) / 2;
+            int locationX = ((panelContext.Width - 16) - (cardsInRow * cardSize.Width)) / 2;
             int locationY = 12;
 
-            panelCardsDock.Controls.Clear();
+            panelContext.Controls.Clear();
 
             
             while(true)
@@ -50,12 +50,12 @@ namespace Client.Tabs
 
                     locationX += cardSize.Width;
 
-                    panelCardsDock.Controls.Add(card);
+                    panelContext.Controls.Add(card);
 
                     cardsCount++;
                 }
 
-                locationX = ((panelCardsDock.Width - 16) - (cardsInRow * cardSize.Width)) / 2;
+                locationX = ((panelContext.Width - 16) - (cardsInRow * cardSize.Width)) / 2;
                 locationY += cardSize.Height;
             }
         }
@@ -76,7 +76,7 @@ namespace Client.Tabs
             poster.Width = cardSize.Width - margin;
             poster.Height = cardSize.Height - margin - labelHeight;
             poster.Location = new Point(3, 3);
-            poster.BackColor = Color.White;
+            poster.BackColor = Color.DarkGray;
 
             Label label = new Label();
             label.Location = new Point(3, (poster.Location.X + poster.Height));

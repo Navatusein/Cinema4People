@@ -14,7 +14,7 @@ namespace Server
     public partial class Form2 : Form
     {
         List<CinemaRoom> rooms = null;
-        
+
         public List<CinemaRoom> Rooms 
         {
             get { return rooms; } 
@@ -51,7 +51,6 @@ namespace Server
             if(NewRoomSettingsTable.Rows.Count > 1)
                 btAdd.Enabled=true;
         }
-
         private void btAdd_Click(object sender, EventArgs e)
         {
             //Add all data in DB
