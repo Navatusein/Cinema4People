@@ -24,8 +24,8 @@ namespace Client
 
             panelForm.Controls.Clear();
 
-            TabAfisha tab = new TabAfisha();
-            //TabFilm tab = new TabFilm();
+            //TabAfisha tab = new TabAfisha();
+            TabFilm tab = new TabFilm();
 
             panelForm.Controls.Add(tab);
 
@@ -63,23 +63,23 @@ namespace Client
 
         private void btBack_Click(object sender, EventArgs e)
         {
-            if (panelForm.Controls[0] is TabAfisha) return;
-            if (panelForm.Controls[0] is TabFilm)
-            {
-                btMain_Click(sender, e);
-            }
-            else
-            {
-                if (panelForm.Controls[0] is TabCheckout)
-                {
-                    lastButton = sender as Button;
+            //if (panelForm.Controls[0] is TabAfisha) return;
+            //if (panelForm.Controls[0] is TabFilm)
+            //{
+            //    btMain_Click(sender, e);
+            //}
+            //else
+            //{
+            //    if (panelForm.Controls[0] is TabCheckout)
+            //    {
+            //        lastButton = sender as Button;
 
-                    panelForm.Controls.Clear();
-                    TabFilm tab = new TabFilm();
-                    panelForm.Controls.Add(tab);
-                    tab.Show();
-                }
-            }
+            //        panelForm.Controls.Clear();
+            //        TabFilm tab = new TabFilm();
+            //        panelForm.Controls.Add(tab);
+            //        tab.Show();
+            //    }
+            //}
         }
     }
 }
