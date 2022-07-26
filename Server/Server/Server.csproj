@@ -114,6 +114,10 @@
     <Compile Include="Migrations\202207261209242_Add ActorToMovieDbId.designer.cs">
       <DependentUpon>202207261209242_Add ActorToMovieDbId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202207261220576_Remove ActorToMovieId.cs" />
+    <Compile Include="Migrations\202207261220576_Remove ActorToMovieId.designer.cs">
+      <DependentUpon>202207261220576_Remove ActorToMovieId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelDB\ActorDb.cs" />
     <Compile Include="ModelDB\ActorToMovieDb.cs" />
@@ -152,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202207261209242_Add ActorToMovieDbId.resx">
       <DependentUpon>202207261209242_Add ActorToMovieDbId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207261220576_Remove ActorToMovieId.resx">
+      <DependentUpon>202207261220576_Remove ActorToMovieId.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

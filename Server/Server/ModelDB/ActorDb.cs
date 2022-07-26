@@ -16,7 +16,6 @@ namespace Server.ModelDB
 
         [Key]
         public int Id { get; set; }
-        public int ActorToMovieDb { get; set; }
         public string ActorName { get; set; }
         public string ActorRole { get; set; }
         public byte[] ActorPhoto { get; set; }

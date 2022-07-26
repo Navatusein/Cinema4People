@@ -14,7 +14,6 @@ namespace Server.ModelDB
             Comments = new HashSet<Comment>();
         }
         public int Id { get; set; }
-        public int ActorToMovieDbId { get; set; }
         public string Title { set; get; }
         public string TrailerLink { set; get; }
         public string Description { set; get; }//could add actors as extra variable/field
