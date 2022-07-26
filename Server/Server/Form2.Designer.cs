@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.lbRooms = new System.Windows.Forms.ListBox();
             this.NewRoomSettingsTable = new System.Windows.Forms.DataGridView();
+            this.rowIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbRoomName = new System.Windows.Forms.TextBox();
             this.btAdd = new System.Windows.Forms.Button();
-            this.rowIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.NewRoomSettingsTable)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +74,32 @@
             this.NewRoomSettingsTable.TabIndex = 31;
             this.NewRoomSettingsTable.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.NewRoomSettingsTable_DefaultValuesNeeded);
             this.NewRoomSettingsTable.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.NewRoomSettingsTable_RowsAdded);
+            // 
+            // rowIndex
+            // 
+            this.rowIndex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.rowIndex.FillWeight = 111.9289F;
+            this.rowIndex.HeaderText = "Row Number";
+            this.rowIndex.Name = "rowIndex";
+            this.rowIndex.ReadOnly = true;
+            // 
+            // colAmount
+            // 
+            this.colAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle1.Format = "N2";
+            this.colAmount.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colAmount.FillWeight = 111.9289F;
+            this.colAmount.HeaderText = "Amount in this row";
+            this.colAmount.Name = "colAmount";
+            // 
+            // tbPrice
+            // 
+            this.tbPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Format = "C2";
+            this.tbPrice.DefaultCellStyle = dataGridViewCellStyle2;
+            this.tbPrice.FillWeight = 76.14214F;
+            this.tbPrice.HeaderText = "Single seat price";
+            this.tbPrice.Name = "tbPrice";
             // 
             // groupBox1
             // 
@@ -114,34 +140,9 @@
             this.btAdd.TabIndex = 44;
             this.btAdd.Text = "Add";
             this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
-            // rowIndex
-            // 
-            this.rowIndex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.rowIndex.FillWeight = 111.9289F;
-            this.rowIndex.HeaderText = "Row Number";
-            this.rowIndex.Name = "rowIndex";
-            this.rowIndex.ReadOnly = true;
-            // 
-            // colAmount
-            // 
-            this.colAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Format = "N2";
-            this.colAmount.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colAmount.FillWeight = 111.9289F;
-            this.colAmount.HeaderText = "Amount in this row";
-            this.colAmount.Name = "colAmount";
-            // 
-            // tbPrice
-            // 
-            this.tbPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Format = "C2";
-            this.tbPrice.DefaultCellStyle = dataGridViewCellStyle4;
-            this.tbPrice.FillWeight = 76.14214F;
-            this.tbPrice.HeaderText = "Single seat price";
-            this.tbPrice.Name = "tbPrice";
-            // 
-            // FormMain
+            // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
