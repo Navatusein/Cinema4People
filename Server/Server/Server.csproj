@@ -102,9 +102,26 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202207261200308_Initial.cs" />
+    <Compile Include="Migrations\202207261200308_Initial.designer.cs">
+      <DependentUpon>202207261200308_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207261208006_Add ActorToMovieId.cs" />
+    <Compile Include="Migrations\202207261208006_Add ActorToMovieId.designer.cs">
+      <DependentUpon>202207261208006_Add ActorToMovieId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207261209242_Add ActorToMovieDbId.cs" />
+    <Compile Include="Migrations\202207261209242_Add ActorToMovieDbId.designer.cs">
+      <DependentUpon>202207261209242_Add ActorToMovieDbId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ModelDB\ActorDb.cs" />
+    <Compile Include="ModelDB\ActorToMovieDb.cs" />
     <Compile Include="ModelDB\CinemaDbContext.cs" />
     <Compile Include="ModelDB\CinemaRoomDb.cs" />
-    <Compile Include="ModelDB\MoviesDb.cs" />
+    <Compile Include="ModelDB\Comment.cs" />
+    <Compile Include="ModelDB\MovieDb.cs" />
+    <Compile Include="ModelDB\ProductDb.cs" />
     <Compile Include="ModelDB\SessionDb.cs" />
     <Compile Include="Models\CinemaRoom.cs" />
     <Compile Include="Models\Product.cs" />
@@ -126,6 +143,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207261200308_Initial.resx">
+      <DependentUpon>202207261200308_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207261208006_Add ActorToMovieId.resx">
+      <DependentUpon>202207261208006_Add ActorToMovieId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207261209242_Add ActorToMovieDbId.resx">
+      <DependentUpon>202207261209242_Add ActorToMovieDbId.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
