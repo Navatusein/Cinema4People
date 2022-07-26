@@ -30,24 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TabAfisha));
-            this.panelCardsDock = new System.Windows.Forms.Panel();
+            this.panelContext = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonFilter = new System.Windows.Forms.Button();
             this.imageList24 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelCardsDock
+            // panelContext
             // 
-            this.panelCardsDock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelContext.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelCardsDock.AutoScroll = true;
-            this.panelCardsDock.AutoScrollMargin = new System.Drawing.Size(0, 12);
-            this.panelCardsDock.Location = new System.Drawing.Point(0, 35);
-            this.panelCardsDock.Name = "panelCardsDock";
-            this.panelCardsDock.Size = new System.Drawing.Size(580, 415);
-            this.panelCardsDock.TabIndex = 0;
+            this.panelContext.AutoScroll = true;
+            this.panelContext.AutoScrollMargin = new System.Drawing.Size(0, 12);
+            this.panelContext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.panelContext.Location = new System.Drawing.Point(0, 35);
+            this.panelContext.Name = "panelContext";
+            this.panelContext.Size = new System.Drawing.Size(800, 415);
+            this.panelContext.TabIndex = 0;
             // 
             // panel1
             // 
@@ -55,7 +56,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.panel1.Controls.Add(this.buttonFilter);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(220, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(580, 35);
             this.panel1.TabIndex = 1;
@@ -85,10 +86,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(580, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelCardsDock);
+            this.Controls.Add(this.panelContext);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TabAfisha";
             this.Text = "TabAfisha";
@@ -100,7 +101,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panelCardsDock;
+        private System.Windows.Forms.Panel panelContext;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonFilter;
         private System.Windows.Forms.ImageList imageList24;
