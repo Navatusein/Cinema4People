@@ -16,8 +16,8 @@ namespace Server.Models
         int roomId;//номер 
         public string name;//название 
         double price;//цена
-        public Dictionary<(int Row, int Column), bool> seats;//схема [(ряд, индекс в ряду), занято/нет]
-        public Dictionary<(int Row, float Price), string> types; // dictionary for types(seats) of rows
+        public Dictionary<(int Row, int Column), bool> seats;//dictionary [(row, index), empty or not] scheme of room
+        public Dictionary<(int Row, float Price), string> types; // dictionary [(row, price), type] scheme of price and type of row
         /// <summary>
         /// Конструктор по умолчанию
         /// </summary>
