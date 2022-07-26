@@ -16,5 +16,11 @@ namespace Server
         {
             InitializeComponent();
         }
+
+        private void btnForm2_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.Show();
+        }
     }
 }
