@@ -29,6 +29,10 @@ namespace Server
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            "",
+            "",
+            ""}, -1);
             this.label1 = new System.Windows.Forms.Label();
             this.addbtn = new System.Windows.Forms.Button();
             this.nametb = new System.Windows.Forms.TextBox();
@@ -39,6 +43,8 @@ namespace Server
             this.label4 = new System.Windows.Forms.Label();
             this.imagetb = new System.Windows.Forms.TextBox();
             this.imagebtn = new System.Windows.Forms.Button();
+            this.removebtn = new System.Windows.Forms.Button();
+            this.productslv = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // label1
@@ -126,11 +132,34 @@ namespace Server
             this.imagebtn.UseVisualStyleBackColor = true;
             this.imagebtn.Click += new System.EventHandler(this.imagebtn_Click);
             // 
+            // removebtn
+            // 
+            this.removebtn.Location = new System.Drawing.Point(100, 193);
+            this.removebtn.Name = "removebtn";
+            this.removebtn.Size = new System.Drawing.Size(75, 23);
+            this.removebtn.TabIndex = 10;
+            this.removebtn.Text = "Remove";
+            this.removebtn.UseVisualStyleBackColor = true;
+            this.removebtn.Click += new System.EventHandler(this.removebtn_Click);
+            // 
+            // productslv
+            // 
+            this.productslv.HideSelection = false;
+            this.productslv.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
+            this.productslv.Location = new System.Drawing.Point(327, 12);
+            this.productslv.Name = "productslv";
+            this.productslv.Size = new System.Drawing.Size(444, 204);
+            this.productslv.TabIndex = 11;
+            this.productslv.UseCompatibleStateImageBehavior = false;
+            // 
             // Bar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 250);
+            this.ClientSize = new System.Drawing.Size(783, 258);
+            this.Controls.Add(this.productslv);
+            this.Controls.Add(this.removebtn);
             this.Controls.Add(this.imagebtn);
             this.Controls.Add(this.imagetb);
             this.Controls.Add(this.label4);
@@ -160,5 +189,7 @@ namespace Server
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox imagetb;
         private System.Windows.Forms.Button imagebtn;
+        private System.Windows.Forms.Button removebtn;
+        private System.Windows.Forms.ListView productslv;
     }
 }
