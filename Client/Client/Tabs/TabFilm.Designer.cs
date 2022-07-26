@@ -37,7 +37,7 @@
             this.labelFilmDescription = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonBuyTicket = new System.Windows.Forms.Button();
             this.panelContext.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +60,7 @@
             this.panelContext.AutoScroll = true;
             this.panelContext.AutoScrollMargin = new System.Drawing.Size(0, 12);
             this.panelContext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.panelContext.Controls.Add(this.button1);
+            this.panelContext.Controls.Add(this.buttonBuyTicket);
             this.panelContext.Controls.Add(this.label3);
             this.panelContext.Controls.Add(this.panel3);
             this.panelContext.Controls.Add(this.labelFilmDescription);
@@ -146,20 +146,20 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Trailer:";
             // 
-            // button1
+            // buttonBuyTicket
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(534, 199);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(187, 31);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Buy Ticket";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonBuyTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.buttonBuyTicket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonBuyTicket.FlatAppearance.BorderSize = 0;
+            this.buttonBuyTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBuyTicket.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonBuyTicket.ForeColor = System.Drawing.Color.White;
+            this.buttonBuyTicket.Location = new System.Drawing.Point(534, 199);
+            this.buttonBuyTicket.Name = "buttonBuyTicket";
+            this.buttonBuyTicket.Size = new System.Drawing.Size(187, 31);
+            this.buttonBuyTicket.TabIndex = 8;
+            this.buttonBuyTicket.Text = "Buy Ticket";
+            this.buttonBuyTicket.UseVisualStyleBackColor = false;
             // 
             // TabFilm
             // 
@@ -191,6 +191,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonBuyTicket;
     }
 }
