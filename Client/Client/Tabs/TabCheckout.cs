@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace Client.Tabs
 {
-    public partial class TabFilm : Form
+    public partial class TabCheckout : Form
     {
-        public TabFilm()
+        public TabCheckout()
         {
             InitializeComponent();
-
-            this.TopLevel = false;
-            this.Dock = DockStyle.Fill;
-            this.TopMost = true;
-        }
-
-        private void btCheckout_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

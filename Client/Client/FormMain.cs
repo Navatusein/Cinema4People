@@ -32,7 +32,7 @@ namespace Client
             tab.Show();
         }
 
-        private void btCheckout_Click(object sender, EventArgs e)
+        private void btHistory_Click(object sender, EventArgs e)
         {
             if (!(sender is Button))
                 return;
