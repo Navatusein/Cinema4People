@@ -85,6 +85,7 @@ namespace Client.Tabs
             poster.Height = cardSize.Height - margin - labelHeight;
             poster.Location = new Point(3, 3);
             poster.BackColor = Color.DarkGray;
+            poster.Click += OpenFilm;
 
 
             Label label = new Label();
@@ -98,7 +99,7 @@ namespace Client.Tabs
             label.TextAlign = ContentAlignment.MiddleCenter;
             label.ForeColor = Color.White;
             label.BorderStyle = BorderStyle.FixedSingle;
-            label.Click += LB_Click;
+            label.Click += OpenFilm;
 
 
             card.Controls.Add(poster);
@@ -112,7 +113,7 @@ namespace Client.Tabs
             ReDraw();
         }
 
-        protected void LB_Click(object sender, EventArgs e)
+        protected void OpenFilm(object sender, EventArgs e)
         {
             Label label = (sender as Label);
             this.DialogResult = DialogResult.OK;
