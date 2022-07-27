@@ -24,8 +24,8 @@ namespace Client
 
             panelForm.Controls.Clear();
 
-            TabAfisha tab = new TabAfisha();
-            //TabFilm tab = new TabFilm();
+            //TabAfisha tab = new TabAfisha();
+            TabFilm tab = new TabFilm();
 
             panelForm.Controls.Add(tab);
 
@@ -81,6 +81,7 @@ namespace Client
                 }
             }
         }
+        
         public void showFilm()
         {
             TabAfisha temp = panelForm.Controls[0] as TabAfisha;

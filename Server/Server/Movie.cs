@@ -9,7 +9,6 @@ namespace Server
 {
     public class Movie
     {
-        public int Id { get; set; }
         public string Title { set; get; }
         public string TrailerLink { set; get; }
         public string Description { set; get; }//could add actors as extra variable/field
@@ -18,7 +17,7 @@ namespace Server
         public double Rating { set; get; }//
         public List<string> Comments { set; get; }
         public Bitmap Poster { set; get; }
-        public Dictionary<List<string>, Bitmap> ActorsPictures { set; get; }
+        public List<Actor> Actors { get; set; }
         public string Genres { set; get; }
 
 

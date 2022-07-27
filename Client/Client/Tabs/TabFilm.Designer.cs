@@ -1,4 +1,4 @@
-﻿namespace Client.Tabs
+namespace Client.Tabs
 {
     partial class TabFilm
     {
@@ -30,14 +30,16 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelContext = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.labelFilmDescription = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labelFilmName = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelFilmName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelFilmDescription = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.buttonBuyTicket = new System.Windows.Forms.Button();
+
             this.panelContext.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +62,7 @@
             this.panelContext.AutoScroll = true;
             this.panelContext.AutoScrollMargin = new System.Drawing.Size(0, 12);
             this.panelContext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.panelContext.Controls.Add(this.button1);
+            this.panelContext.Controls.Add(this.buttonBuyTicket);
             this.panelContext.Controls.Add(this.label3);
             this.panelContext.Controls.Add(this.panel3);
             this.panelContext.Controls.Add(this.labelFilmDescription);
@@ -142,25 +144,21 @@
             this.labelFilmName.Size = new System.Drawing.Size(255, 64);
             this.labelFilmName.TabIndex = 3;
             this.labelFilmName.Text = "Some Film Name\r\n\r\n";
+            //
+            // buttonBuyTicket
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(198, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 23);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Film name:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 220);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.buttonBuyTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.buttonBuyTicket.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonBuyTicket.FlatAppearance.BorderSize = 0;
+            this.buttonBuyTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBuyTicket.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonBuyTicket.ForeColor = System.Drawing.Color.White;
+            this.buttonBuyTicket.Location = new System.Drawing.Point(534, 199);
+            this.buttonBuyTicket.Name = "buttonBuyTicket";
+            this.buttonBuyTicket.Size = new System.Drawing.Size(187, 31);
+            this.buttonBuyTicket.TabIndex = 8;
+            this.buttonBuyTicket.Text = "Buy Ticket";
+            this.buttonBuyTicket.UseVisualStyleBackColor = false;
             // 
             // TabFilm
             // 
@@ -193,6 +191,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonBuyTicket;
     }
 }

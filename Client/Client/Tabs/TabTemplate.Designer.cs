@@ -30,6 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelContext = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelContext.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -50,10 +52,20 @@
             this.panelContext.AutoScroll = true;
             this.panelContext.AutoScrollMargin = new System.Drawing.Size(0, 12);
             this.panelContext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.panelContext.Controls.Add(this.label1);
             this.panelContext.Location = new System.Drawing.Point(0, 35);
             this.panelContext.Name = "panelContext";
             this.panelContext.Size = new System.Drawing.Size(800, 415);
             this.panelContext.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(485, 500);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
             // 
             // TabTemplate
             // 
@@ -66,6 +78,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TabTemplate";
             this.Text = "TabTemplate";
+            this.panelContext.ResumeLayout(false);
+            this.panelContext.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -74,5 +88,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelContext;
+        private System.Windows.Forms.Label label1;
     }
 }
