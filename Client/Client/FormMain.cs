@@ -15,11 +15,11 @@ namespace Client
     public partial class FormMain : Form
     {
         Button lastButton;
-
+        string movie;
         public FormMain()
         {
             InitializeComponent();
-
+            
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
             panelForm.Controls.Clear();
@@ -32,7 +32,7 @@ namespace Client
             tab.Show();
         }
 
-        private void btCheckout_Click(object sender, EventArgs e)
+        private void btHistory_Click(object sender, EventArgs e)
         {
             if (!(sender is Button))
                 return;
@@ -63,23 +63,36 @@ namespace Client
 
         private void btBack_Click(object sender, EventArgs e)
         {
-            //if (panelForm.Controls[0] is TabAfisha) return;
-            //if (panelForm.Controls[0] is TabFilm)
-            //{
-            //    btMain_Click(sender, e);
-            //}
-            //else
-            //{
-            //    if (panelForm.Controls[0] is TabCheckout)
-            //    {
-            //        lastButton = sender as Button;
+            if (panelForm.Controls[0] is TabAfisha) return;
+            if (panelForm.Controls[0] is TabFilm)
+            {
+                btMain_Click(sender, e);
+            }
+            else
+            {
+                if (panelForm.Controls[0] is TabCheckout)
+                {
+                    lastButton = sender as Button;
 
-            //        panelForm.Controls.Clear();
-            //        TabFilm tab = new TabFilm();
-            //        panelForm.Controls.Add(tab);
-            //        tab.Show();
-            //    }
-            //}
+                    panelForm.Controls.Clear();
+                    TabFilm tab = new TabFilm(movie);
+                    panelForm.Controls.Add(tab);
+                    tab.Show();
+                }
+            }
+        }
+        
+        public void showFilm()
+        {
+            TabAfisha temp = panelForm.Controls[0] as TabAfisha;
+           if (temp.DialogResult == DialogResult.OK)
+            {
+                movie = temp.movie;
+                panelForm.Controls.Clear();
+                TabFilm tab = new TabFilm(movie);
+                panelForm.Controls.Add(tab);
+                tab.Show();
+            }
         }
     }
 }

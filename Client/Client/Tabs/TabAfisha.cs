@@ -12,11 +12,19 @@ namespace Client.Tabs
 {
     public partial class TabAfisha : Form
     {
+        List<string> movies = new List<string>();
+
+        public string movie { get; set; }
+
         private Size cardSize;
 
         public TabAfisha()
         {
+            
             InitializeComponent();
+
+
+            movies.Add("Azazel");
 
             this.TopLevel = false;
             this.Dock = DockStyle.Fill;
@@ -78,16 +86,20 @@ namespace Client.Tabs
             poster.Location = new Point(3, 3);
             poster.BackColor = Color.DarkGray;
 
+
             Label label = new Label();
+            label.Name = card.Controls.Count.ToString();
             label.Location = new Point(3, (poster.Location.X + poster.Height));
             label.AutoSize = false;
             label.Width = cardSize.Width - margin;
             label.Height = labelHeight;
-            label.Text = "13123123123121231231lkjlkjlkjlkjlkj";
+            label.Text = movies[0];
             label.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             label.TextAlign = ContentAlignment.MiddleCenter;
             label.ForeColor = Color.White;
             label.BorderStyle = BorderStyle.FixedSingle;
+            label.Click += LB_Click;
+
 
             card.Controls.Add(poster);
             card.Controls.Add(label);
@@ -99,5 +111,15 @@ namespace Client.Tabs
         {
             ReDraw();
         }
+
+        protected void LB_Click(object sender, EventArgs e)
+        {
+            Label label = (sender as Label);
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        
+        }
+
+        
     }
 }

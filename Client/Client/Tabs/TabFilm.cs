@@ -12,16 +12,27 @@ namespace Client.Tabs
 {
     public partial class TabFilm : Form
     {
-        public TabFilm()
+        
+        public TabFilm(string movie)
         {
             InitializeComponent();
-
+            labelFilmName.Text = movie;
             this.TopLevel = false;
             this.Dock = DockStyle.Fill;
             this.TopMost = true;
         }
 
+        private void btCheckout_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void panelContext_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TabFilm_Load(object sender, EventArgs e)
         {
 
         }
