@@ -15,6 +15,10 @@ namespace Client.Tabs
         public TabTemplate()
         {
             InitializeComponent();
+
+            this.TopLevel = false;
+            this.Dock = DockStyle.Fill;
+            this.TopMost = true;
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Client.Tabs
 
         private Size cardSize;
 
-        public TabAfisha()
+        public TabAfisha(FormMain formMain)
         {
             
             InitializeComponent();
@@ -119,7 +119,5 @@ namespace Client.Tabs
             this.Close();
         
         }
-
-        
     }
 }

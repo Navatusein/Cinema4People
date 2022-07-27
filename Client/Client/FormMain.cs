@@ -24,8 +24,8 @@ namespace Client
 
             panelForm.Controls.Clear();
 
-            //TabAfisha tab = new TabAfisha();
-            TabFilm tab = new TabFilm();
+            TabAfisha tab = new TabAfisha(this);
+            //TabFilm tab = new TabFilm("lol");
 
             panelForm.Controls.Add(tab);
 
@@ -54,7 +54,7 @@ namespace Client
 
             panelForm.Controls.Clear();
 
-            TabAfisha tab = new TabAfisha();
+            TabAfisha tab = new TabAfisha(this);
 
             panelForm.Controls.Add(tab);
 
@@ -85,7 +85,8 @@ namespace Client
         public void showFilm()
         {
             TabAfisha temp = panelForm.Controls[0] as TabAfisha;
-           if (temp.DialogResult == DialogResult.OK)
+
+            if (temp.DialogResult == DialogResult.OK)
             {
                 movie = temp.movie;
                 panelForm.Controls.Clear();
