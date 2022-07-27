@@ -15,11 +15,11 @@ namespace Client
     public partial class FormMain : Form
     {
         Button lastButton;
-
+        string movie;
         public FormMain()
         {
             InitializeComponent();
-
+            
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
             panelForm.Controls.Clear();
@@ -75,10 +75,22 @@ namespace Client
                     lastButton = sender as Button;
 
                     panelForm.Controls.Clear();
-                    TabFilm tab = new TabFilm();
+                    TabFilm tab = new TabFilm(movie);
                     panelForm.Controls.Add(tab);
                     tab.Show();
                 }
+            }
+        }
+        public void showFilm()
+        {
+            TabAfisha temp = panelForm.Controls[0] as TabAfisha;
+           if (temp.DialogResult == DialogResult.OK)
+            {
+                movie = temp.movie;
+                panelForm.Controls.Clear();
+                TabFilm tab = new TabFilm(movie);
+                panelForm.Controls.Add(tab);
+                tab.Show();
             }
         }
     }

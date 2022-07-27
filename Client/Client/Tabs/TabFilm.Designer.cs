@@ -71,8 +71,9 @@
             this.panelContext.Location = new System.Drawing.Point(0, 35);
             this.panelContext.Margin = new System.Windows.Forms.Padding(12, 12, 28, 12);
             this.panelContext.Name = "panelContext";
-            this.panelContext.Size = new System.Drawing.Size(800, 415);
+            this.panelContext.Size = new System.Drawing.Size(800, 456);
             this.panelContext.TabIndex = 3;
+            this.panelContext.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContext_Paint);
             // 
             // button1
             // 
@@ -83,7 +84,7 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(534, 199);
-            this.button1.Name = "btCheckout";
+            this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 31);
             this.button1.TabIndex = 8;
             this.button1.Text = "Buy Ticket";
@@ -167,12 +168,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 491);
             this.Controls.Add(this.panelContext);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TabFilm";
             this.Text = "TabFilm";
+            this.Load += new System.EventHandler(this.TabFilm_Load);
             this.panelContext.ResumeLayout(false);
             this.panelContext.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
