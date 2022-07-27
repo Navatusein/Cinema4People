@@ -12,6 +12,7 @@ namespace Client.Tabs
 {
     public partial class TabAfisha : Form
     {
+        int counter = 0;
         List<MyMovie> movies = new List<MyMovie>();
 
         private Size cardSize;
@@ -23,10 +24,13 @@ namespace Client.Tabs
             
             InitializeComponent();
 
+
+            movies.Add(new MyMovie() { Name = "Lol", Description = "That`s LOL "});
+            movies.Add(new MyMovie() { Name = "Lol1", Description = "That`s LOL 1" });
+            movies.Add(new MyMovie() { Name = "Lol2", Description = "That`s LOL 2" });
+            movies.Add(new MyMovie() { Name = "Lol3", Description = "That`s LOL 3" });
+
             this.formMain = formMain;
-
-            movies.Add(new MyMovie() { Name = "Lol" });
-
             this.TopLevel = false;
             this.Dock = DockStyle.Fill;
             this.TopMost = true;
@@ -34,6 +38,9 @@ namespace Client.Tabs
             cardSize = new Size(160, 200);
 
             ReDraw();
+
+
+
         }
 
         private void ReDraw()
@@ -55,7 +62,6 @@ namespace Client.Tabs
                         return;
 
                     Panel card = CreateCard(new Point(locationX, locationY), movies[cardsCount]);
-
                     locationX += cardSize.Width;
 
                     panelContext.Controls.Add(card);
@@ -85,6 +91,8 @@ namespace Client.Tabs
             poster.Height = cardSize.Height - margin - labelHeight;
             poster.Location = new Point(3, 3);
             poster.BackColor = Color.DarkGray;
+            poster.Tag = counter;
+            counter++;
             poster.Click += OpenFilm;
 
 
@@ -99,7 +107,6 @@ namespace Client.Tabs
             label.TextAlign = ContentAlignment.MiddleCenter;
             label.ForeColor = Color.White;
             label.BorderStyle = BorderStyle.FixedSingle;
-            label.Click += OpenFilm;
 
 
             card.Controls.Add(poster);
@@ -115,15 +122,17 @@ namespace Client.Tabs
 
         protected void OpenFilm(object sender, EventArgs e)
         {
-            Label label = (sender as Label);
+            var pb = sender as PictureBox;
+           
             this.DialogResult = DialogResult.OK;
-
-            formMain.showFilm();
-        }
+            formMain.showFilm(movies[Convert.ToInt32(pb.Tag)]);
+         }
     }
 
-    class MyMovie
+    public class MyMovie
     {
         public string Name { get; set; }
+        public string Description { get; set; }
+
     }
 }

@@ -14,8 +14,8 @@ namespace Client
 {
     public partial class FormMain : Form
     {
+        MyMovie lastMovie;
         Button lastButton;
-        string movie;
         public FormMain()
         {
             InitializeComponent();
@@ -75,15 +75,16 @@ namespace Client
                     lastButton = sender as Button;
 
                     panelForm.Controls.Clear();
-                    TabFilm tab = new TabFilm(movie);
+                    TabFilm tab = new TabFilm(lastMovie);
                     panelForm.Controls.Add(tab);
                     tab.Show();
                 }
             }
         }
         
-        public void showFilm()
+        public void showFilm(MyMovie movie)
         {
+            lastMovie = movie;
             TabAfisha temp = panelForm.Controls[0] as TabAfisha;
 
             if (temp.DialogResult == DialogResult.OK)
