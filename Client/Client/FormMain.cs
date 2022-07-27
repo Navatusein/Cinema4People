@@ -88,7 +88,6 @@ namespace Client
 
             if (temp.DialogResult == DialogResult.OK)
             {
-                movie = temp.movie;
                 panelForm.Controls.Clear();
                 TabFilm tab = new TabFilm(movie);
                 panelForm.Controls.Add(tab);

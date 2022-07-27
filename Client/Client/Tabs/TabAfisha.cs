@@ -12,19 +12,20 @@ namespace Client.Tabs
 {
     public partial class TabAfisha : Form
     {
-        List<string> movies = new List<string>();
-
-        public string movie { get; set; }
+        List<MyMovie> movies = new List<MyMovie>();
 
         private Size cardSize;
+
+        private FormMain formMain;
 
         public TabAfisha(FormMain formMain)
         {
             
             InitializeComponent();
 
+            this.formMain = formMain;
 
-            movies.Add("Azazel");
+            movies.Add(new MyMovie() { Name = "Lol" });
 
             this.TopLevel = false;
             this.Dock = DockStyle.Fill;
@@ -45,16 +46,15 @@ namespace Client.Tabs
             int locationY = 12;
 
             panelContext.Controls.Clear();
-
             
             while(true)
             {
                 for (int j = 0; j < cardsInRow; j++)
                 {
-                    if (cardsCount >= 50) // 50 - Количество карт которые нужно создать.
+                    if (cardsCount >= movies.Count)
                         return;
 
-                    Panel card = CreateCard(new Point(locationX, locationY));
+                    Panel card = CreateCard(new Point(locationX, locationY), movies[cardsCount]);
 
                     locationX += cardSize.Width;
 
@@ -68,7 +68,7 @@ namespace Client.Tabs
             }
         }
 
-        private Panel CreateCard(Point location)
+        private Panel CreateCard(Point location, MyMovie movie)
         {
             int margin = 6;
             int labelHeight = 25;
@@ -93,7 +93,7 @@ namespace Client.Tabs
             label.AutoSize = false;
             label.Width = cardSize.Width - margin;
             label.Height = labelHeight;
-            label.Text = movies[0];
+            label.Text = movie.Name;
             label.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             label.TextAlign = ContentAlignment.MiddleCenter;
             label.ForeColor = Color.White;
@@ -116,8 +116,13 @@ namespace Client.Tabs
         {
             Label label = (sender as Label);
             this.DialogResult = DialogResult.OK;
-            this.Close();
-        
+
+            formMain.showFilm();
         }
+    }
+
+    class MyMovie
+    {
+        public string Name { get; set; }
     }
 }
