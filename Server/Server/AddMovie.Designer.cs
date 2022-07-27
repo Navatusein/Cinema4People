@@ -44,7 +44,7 @@
             this.tbDuration = new System.Windows.Forms.TextBox();
             this.cbActors = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbDescription = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tbTrailerLink = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -210,14 +210,14 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "Duration";
             // 
-            // textBox2
+            // tbDescription
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 70);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(314, 71);
-            this.textBox2.TabIndex = 24;
+            this.tbDescription.Location = new System.Drawing.Point(115, 70);
+            this.tbDescription.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDescription.Multiline = true;
+            this.tbDescription.Name = "tbDescription";
+            this.tbDescription.Size = new System.Drawing.Size(314, 71);
+            this.tbDescription.TabIndex = 24;
             // 
             // label3
             // 
@@ -305,7 +305,7 @@
             this.Controls.Add(this.tbDuration);
             this.Controls.Add(this.cbActors);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbDescription);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbTrailerLink);
             this.Controls.Add(this.label2);
@@ -337,7 +337,7 @@
         private System.Windows.Forms.TextBox tbDuration;
         private System.Windows.Forms.ComboBox cbActors;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbDescription;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbTrailerLink;
         private System.Windows.Forms.Label label2;

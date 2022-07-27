@@ -14,6 +14,10 @@ namespace Server.ModelDB
         public int RoomNumber { get; set; }
         public string RoomName { get; set; }
         public double Price { get; set; }
-        
+        public override string ToString()
+        {
+            return String.Format("{0} ; {1} ; {2} ; {3}", Id, RoomNumber, RoomName,Price);
+        }
+
     }
 }

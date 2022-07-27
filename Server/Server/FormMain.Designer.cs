@@ -28,34 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnForm2 = new System.Windows.Forms.Button();
+            this.btAfisha = new System.Windows.Forms.Button();
+            this.btRoom = new System.Windows.Forms.Button();
+            this.btBar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnForm2
+            // btAfisha
             // 
-            this.btnForm2.Location = new System.Drawing.Point(12, 12);
-            this.btnForm2.Name = "btnForm2";
-            this.btnForm2.Size = new System.Drawing.Size(75, 23);
-            this.btnForm2.TabIndex = 0;
-            this.btnForm2.Text = "Form 2";
-            this.btnForm2.UseVisualStyleBackColor = true;
-            this.btnForm2.Click += new System.EventHandler(this.btnForm2_Click);
+            this.btAfisha.Location = new System.Drawing.Point(151, 100);
+            this.btAfisha.Name = "btAfisha";
+            this.btAfisha.Size = new System.Drawing.Size(75, 23);
+            this.btAfisha.TabIndex = 0;
+            this.btAfisha.Text = "Afisha";
+            this.btAfisha.UseVisualStyleBackColor = true;
+            this.btAfisha.Click += new System.EventHandler(this.btAfisha_Click);
+            // 
+            // btRoom
+            // 
+            this.btRoom.Location = new System.Drawing.Point(151, 4);
+            this.btRoom.Name = "btRoom";
+            this.btRoom.Size = new System.Drawing.Size(75, 23);
+            this.btRoom.TabIndex = 1;
+            this.btRoom.Text = "Room";
+            this.btRoom.UseVisualStyleBackColor = true;
+            this.btRoom.Click += new System.EventHandler(this.btRoom_Click);
+            // 
+            // btBar
+            // 
+            this.btBar.Location = new System.Drawing.Point(151, 53);
+            this.btBar.Name = "btBar";
+            this.btBar.Size = new System.Drawing.Size(75, 23);
+            this.btBar.TabIndex = 2;
+            this.btBar.Text = "Bar";
+            this.btBar.UseVisualStyleBackColor = true;
+            this.btBar.Click += new System.EventHandler(this.btBar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Add room";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(118, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Add products to the bar";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 110);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Create afisha";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnForm2);
+            this.ClientSize = new System.Drawing.Size(238, 149);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btBar);
+            this.Controls.Add(this.btRoom);
+            this.Controls.Add(this.btAfisha);
             this.Name = "FormMain";
             this.Text = "FormMain";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnForm2;
+        private System.Windows.Forms.Button btAfisha;
+        private System.Windows.Forms.Button btRoom;
+        private System.Windows.Forms.Button btBar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
