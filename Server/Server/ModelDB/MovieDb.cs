@@ -24,5 +24,9 @@ namespace Server.ModelDB
 
         public virtual ICollection<ActorToMovieDb> ActorsToMovies { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
+        public override string ToString()
+        {
+            return String.Format("{0} ; {1} ", Id, Title);
+        }
     }
 }
