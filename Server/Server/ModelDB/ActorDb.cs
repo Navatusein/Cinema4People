@@ -21,6 +21,10 @@ namespace Server.ModelDB
         public byte[] ActorPhoto { get; set; }
 
         public virtual ICollection<ActorToMovieDb> ActorsToMovies { get; set; }
+        public override string ToString()
+        {
+            return String.Format("{0} ; {1} ; {2}", Id, ActorName, ActorRole);
+        }
 
     }
 }
