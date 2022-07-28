@@ -20,6 +20,8 @@ namespace Server.ModelDB
         public virtual DbSet<MovieDb> Movies { get; set; }
         public virtual DbSet<ProductDb> Products { get; set; }
         public virtual DbSet<SessionDb> Sessions { get; set; }
+        public virtual DbSet<RoomSeatDb> RoomSeats { get; set; }
+        public virtual DbSet<RoomTypeDb> RoomTypes { get; set; }
 
 
     }

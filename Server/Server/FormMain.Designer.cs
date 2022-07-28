@@ -38,7 +38,7 @@
             // 
             // btAfisha
             // 
-            this.btAfisha.Location = new System.Drawing.Point(151, 100);
+            this.btAfisha.Location = new System.Drawing.Point(193, 102);
             this.btAfisha.Name = "btAfisha";
             this.btAfisha.Size = new System.Drawing.Size(75, 23);
             this.btAfisha.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             // btRoom
             // 
-            this.btRoom.Location = new System.Drawing.Point(151, 4);
+            this.btRoom.Location = new System.Drawing.Point(193, 6);
             this.btRoom.Name = "btRoom";
             this.btRoom.Size = new System.Drawing.Size(75, 23);
             this.btRoom.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // btBar
             // 
-            this.btBar.Location = new System.Drawing.Point(151, 53);
+            this.btBar.Location = new System.Drawing.Point(193, 55);
             this.btBar.Name = "btBar";
             this.btBar.Size = new System.Drawing.Size(75, 23);
             this.btBar.TabIndex = 2;
@@ -71,7 +71,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(8, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.Size = new System.Drawing.Size(66, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Add room";
             // 
@@ -80,7 +80,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(8, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 13);
+            this.label2.Size = new System.Drawing.Size(145, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Add products to the bar";
             // 
@@ -89,7 +89,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(8, 110);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.Size = new System.Drawing.Size(86, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Create afisha";
             // 
@@ -97,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(238, 149);
+            this.ClientSize = new System.Drawing.Size(280, 149);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

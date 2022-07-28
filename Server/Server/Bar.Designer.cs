@@ -52,7 +52,7 @@ namespace Server
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
@@ -78,7 +78,7 @@ namespace Server
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 17);
+            this.label2.Size = new System.Drawing.Size(38, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Price";
             // 
@@ -87,7 +87,7 @@ namespace Server
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 100);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 17);
+            this.label3.Size = new System.Drawing.Size(55, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Quantity";
             // 
@@ -110,7 +110,7 @@ namespace Server
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 140);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 17);
+            this.label4.Size = new System.Drawing.Size(45, 16);
             this.label4.TabIndex = 7;
             this.label4.Text = "Image";
             // 

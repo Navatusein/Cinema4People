@@ -10,18 +10,20 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Server.ModelDB;
 using Server.Models;
 
 namespace Server
 {
     public partial class Bar : Form
     {
-        List<Product> products;
+        List<Product> products = new List<Product>();
+        CinemaDbContext db = null;
         private OpenFileDialog openFileDialog = new OpenFileDialog();
         public Bar()
         {
             InitializeComponent();
-            products = LoadProduct();
+          
 
             // Set the view to show details.
             productslv.View = View.Details;
@@ -35,6 +37,9 @@ namespace Server
             productslv.GridLines = true;
             // Sort the items in the list in ascending order.
             productslv.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            db = new CinemaDbContext();
+
+           // products = LoadProduct();
         }
 
         private void addbtn_Click(object sender, EventArgs e)
@@ -48,10 +53,19 @@ namespace Server
                 }
 
                 Product tmp = new Product(nametb.Text, (float)Convert.ToDouble(pricetb.Text), Convert.ToInt32(quantitytb.Text), imagetb.Text);
-                products.Add(tmp);
+                ProductDb productDb = new ProductDb
+                {
+                    Name = nametb.Text,
+                    Price = (float)Convert.ToDouble(pricetb.Text),
+                    Quantity = Convert.ToInt32(quantitytb.Text),
+                    PathImage = imagetb.Text
+                };
+                db.Products.Add(productDb);
+                db.SaveChanges();
+                //products.Add(tmp);
                 UpdateProductList();
             }
-            catch (FormatException ex)
+            catch (FormatException)
             {
                 MessageBox.Show("Cheked value of price of quantity");
             }
@@ -124,7 +138,8 @@ namespace Server
             
         }
         private List<Product> LoadProduct() {
-            string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=usersdb;Integrated Security=True";
+            string connectionString = "Server=178.151.124.250,21062; Database=Cinema4People; User Id=Cinema4PeopleUser; Password=sqQEPTC8e9wr; Trusted_Connection=false;";
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -133,7 +148,7 @@ namespace Server
                 command.Connection = connection;
             }
 
-            return new List<Product>();
+            return null;
         }
 
         private void SaveProduct()

@@ -13,12 +13,11 @@ namespace Server
 {
     public partial class Form1 : Form
     {
-        List<Session> afisha = null;
         CinemaDbContext db = null;
         public Form1()
         {
             InitializeComponent();
-            afisha = new List<Session>();
+          //  afisha = new List<Session>();
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "MM/dd/yyyy hh:mm";
             //comboBox1.Items.AddRange(комнаты с класса Room)
@@ -33,23 +32,27 @@ namespace Server
             //открываеться форма создания класа Movie
             AddMovie addMovie = new AddMovie();
             addMovie.ShowDialog();
+
+            cbMovies.DataSource = db.Movies.ToList();
         }
 
         private void btAddtoAfisha_Click(object sender, EventArgs e)
         {
-            
-            if (DateTime.Now > dateTimePicker1.Value /*|| String.IsNullOrEmpty(tbTitile.Text)*/ || cbRooms.SelectedIndex == -1)
-                return;
-            afisha.Add(new Session
+
+            //if (DateTime.Now > dateTimePicker1.Value /*|| String.IsNullOrEmpty(tbTitile.Text)*/ || cbRooms.SelectedIndex == -1)
+            //    return;
+          
+            SessionDb session = new SessionDb
             {
-                //Date = dateTimePicker1.Value.Month.ToString() +":"+ dateTimePicker1.Value.Day.ToString() +":"+dateTimePicker1.Value.Year.ToString() ,
                 Date = dateTimePicker1.Value.Date,
                 Time = dateTimePicker1.Value.TimeOfDay,
-                MovieTitle = String.Empty,
-                Room = Convert.ToInt32(cbRooms.SelectedItem),
-                IncomeTicket = 0,
-                IncomeBar = 0
-            }); ;
+                MovieId = Convert.ToInt32(cbMovies.Text.Substring(0, 1)),
+                RoomId = Convert.ToInt32(cbRooms.Text.Substring(0, 1)),
+                IncomeBar = 0,
+                IncomeTicket = 0
+            };
+            db.Sessions.Add(session);
+            db.SaveChanges();
         }
 
         /*SQL

@@ -118,6 +118,34 @@
     <Compile Include="Migrations\202207261220576_Remove ActorToMovieId.designer.cs">
       <DependentUpon>202207261220576_Remove ActorToMovieId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202207281016254_%28SessionDb%29delete RoomId.cs" />
+    <Compile Include="Migrations\202207281016254_%28SessionDb%29delete RoomId.designer.cs">
+      <DependentUpon>202207281016254_%28SessionDb%29delete RoomId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207281019315_ActorToMovieDb.cs" />
+    <Compile Include="Migrations\202207281019315_ActorToMovieDb.designer.cs">
+      <DependentUpon>202207281019315_ActorToMovieDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207281023120_return ActorToMovieDb.cs" />
+    <Compile Include="Migrations\202207281023120_return ActorToMovieDb.designer.cs">
+      <DependentUpon>202207281023120_return ActorToMovieDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207281057476_ActorDb Add First and Last Name.cs" />
+    <Compile Include="Migrations\202207281057476_ActorDb Add First and Last Name.designer.cs">
+      <DependentUpon>202207281057476_ActorDb Add First and Last Name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207281158510_add roomId to Session .cs" />
+    <Compile Include="Migrations\202207281158510_add roomId to Session .designer.cs">
+      <DependentUpon>202207281158510_add roomId to Session .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207281225037_add 2 tables%28RoomSeatDb and RoomTypeDb%29.cs" />
+    <Compile Include="Migrations\202207281225037_add 2 tables%28RoomSeatDb and RoomTypeDb%29.designer.cs">
+      <DependentUpon>202207281225037_add 2 tables%28RoomSeatDb and RoomTypeDb%29.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207281236191_roomSeats and Types.cs" />
+    <Compile Include="Migrations\202207281236191_roomSeats and Types.designer.cs">
+      <DependentUpon>202207281236191_roomSeats and Types.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelDB\ActorDb.cs" />
     <Compile Include="ModelDB\ActorToMovieDb.cs" />
@@ -126,6 +154,8 @@
     <Compile Include="ModelDB\Comment.cs" />
     <Compile Include="ModelDB\MovieDb.cs" />
     <Compile Include="ModelDB\ProductDb.cs" />
+    <Compile Include="ModelDB\RoomSeatDb.cs" />
+    <Compile Include="ModelDB\RoomTypeDb.cs" />
     <Compile Include="ModelDB\SessionDb.cs" />
     <Compile Include="Models\CinemaRoom.cs" />
     <Compile Include="Models\Product.cs" />
@@ -159,6 +189,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202207261220576_Remove ActorToMovieId.resx">
       <DependentUpon>202207261220576_Remove ActorToMovieId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207281016254_%28SessionDb%29delete RoomId.resx">
+      <DependentUpon>202207281016254_%28SessionDb%29delete RoomId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207281019315_ActorToMovieDb.resx">
+      <DependentUpon>202207281019315_ActorToMovieDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207281023120_return ActorToMovieDb.resx">
+      <DependentUpon>202207281023120_return ActorToMovieDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207281057476_ActorDb Add First and Last Name.resx">
+      <DependentUpon>202207281057476_ActorDb Add First and Last Name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207281158510_add roomId to Session .resx">
+      <DependentUpon>202207281158510_add roomId to Session .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207281225037_add 2 tables%28RoomSeatDb and RoomTypeDb%29.resx">
+      <DependentUpon>202207281225037_add 2 tables%28RoomSeatDb and RoomTypeDb%29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207281236191_roomSeats and Types.resx">
+      <DependentUpon>202207281236191_roomSeats and Types.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

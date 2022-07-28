@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,9 @@ namespace Server
             InitializeComponent();
             actors = new List<Actor>();
             cinemaDB = new CinemaDbContext();
+            cbDelActors.DataSource = cinemaDB.Actors.ToList();
+            CbActors.DataSource = cinemaDB.Actors.ToList();
+            CbMovie.DataSource = cinemaDB.Movies.ToList();
         }
 
         private void btAddMovie_Click(object sender, EventArgs e)
@@ -38,7 +42,7 @@ namespace Server
             };
             cinemaDB.Movies.Add(movie);
             cinemaDB.SaveChanges();
-
+            CbMovie.DataSource = cinemaDB.Movies.ToList();
             this.DialogResult = DialogResult.OK;
 
         }
@@ -79,17 +83,18 @@ namespace Server
 
         private void btAddActor_Click(object sender, EventArgs e)
         {
-            if (!(tbActorName.Text.Length > 3 && tbActorRole.Text.Length > 3 && actorPhoto != null)) return;
-            actors.Add(new Actor {ActorName = tbActorName.Text, ActorRole = tbActorRole.Text, ActorPhoto = actorPhoto});
-            cbActors.Items.Add(tbActorName.Text+"|"+ tbActorRole.Text);
+            if (!(tbActorFirstName.Text.Length > 3 && tbActorLastName.Text.Length > 3 && actorPhoto != null)) return;
+            actors.Add(new Actor {ActorName = tbActorFirstName.Text, ActorRole = tbActorLastName.Text, ActorPhoto = actorPhoto});
+            //cbActors.Items.Add(tbActorName.Text+"|"+ tbActorRole.Text);
             ActorDb actor = new ActorDb
             {
-                ActorName = tbActorName.Text, ActorRole = tbActorRole.Text, ActorPhoto=ImageToByte(actorPhoto)
+                ActorFirstName = tbActorFirstName.Text, ActorLastName = tbActorLastName.Text, ActorPhoto=ImageToByte(actorPhoto)
             };
 
             cinemaDB.Actors.Add(actor);
             cinemaDB.SaveChanges();
-
+            CbActors.DataSource = cinemaDB.Actors.ToList();
+            cbDelActors.DataSource = cinemaDB.Actors.ToList();
             this.DialogResult = DialogResult.OK;
         }
         public static byte[] ImageToByte(Image img)
@@ -101,15 +106,31 @@ namespace Server
 
         private void btDeleteActor_Click(object sender, EventArgs e)
         {
-            //if (cbActors.Items[cbActors.SelectedIndex] == null) return;
-            //List<string> actors = new List<string>();
-            //foreach (string actor in cbActors.Items[cbActors.SelectedIndex].ToString().Split('|'))
-            //{
-            //    actors.Add(actor);
-            //}
-            //cbActors.Items[cbActors.SelectedIndex].ToString().Split('|')[0]
-            //actors.Where()
-            //cbActors.Items.Remove(cbActors.SelectedIndex);
+
+            string connectionString = "Server=178.151.124.250,21062; Database=Cinema4People; User Id=Cinema4PeopleUser; Password=sqQEPTC8e9wr; Trusted_Connection=false;";
+            string sqlExpression = String.Format("DELETE FROM [ActorDbs] WHERE id='{0}'", Convert.ToInt32(CbActors.Text.Substring(0, 1)));
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(sqlExpression, connection);
+                command.ExecuteNonQuery();
+            }
+            CbActors.DataSource = cinemaDB.Actors.ToList();
+            cbDelActors.DataSource = cinemaDB.Actors.ToList();
+        }
+
+        private void btActorToMovie_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(CbActors.Text) || string.IsNullOrEmpty(CbMovie.Text))
+                return;
+
+                ActorToMovieDb actorToMovieDb = new ActorToMovieDb
+            {
+                ActorsId = Convert.ToInt32(CbActors.Text.Substring(0, 1)),
+                MoviesId = Convert.ToInt32(CbMovie.Text.Substring(0, 1))
+            };
+            cinemaDB.ActorsToMovies.Add(actorToMovieDb);
+            cinemaDB.SaveChanges();
         }
     }
 }
