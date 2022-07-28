@@ -42,6 +42,7 @@ namespace Client.Tabs
             this.tbMovieTitleF = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btReset = new System.Windows.Forms.Button();
             this.panelContext.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +65,7 @@ namespace Client.Tabs
             this.panelContext.AutoScroll = true;
             this.panelContext.AutoScrollMargin = new System.Drawing.Size(0, 12);
             this.panelContext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.panelContext.Controls.Add(this.btReset);
             this.panelContext.Controls.Add(this.btTitleSort);
             this.panelContext.Controls.Add(this.btRatingSort);
             this.panelContext.Controls.Add(this.btTimeSort);
@@ -175,6 +177,16 @@ namespace Client.Tabs
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
+            // btReset
+            // 
+            this.btReset.Location = new System.Drawing.Point(396, 135);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(145, 26);
+            this.btReset.TabIndex = 10;
+            this.btReset.Text = "Reset";
+            this.btReset.UseVisualStyleBackColor = true;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
+            // 
             // TabFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -207,5 +219,6 @@ namespace Client.Tabs
         private Button btTitleSort;
         private Button btRatingSort;
         private Button btTimeSort;
+        private Button btReset;
     }
 }
