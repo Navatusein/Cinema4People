@@ -30,6 +30,7 @@ namespace Client.Tabs
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelContext = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonBuyTicket = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -37,7 +38,6 @@ namespace Client.Tabs
             this.label2 = new System.Windows.Forms.Label();
             this.labelFilmName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelContext.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,7 @@ namespace Client.Tabs
             this.panelContext.AutoScroll = true;
             this.panelContext.AutoScrollMargin = new System.Drawing.Size(0, 12);
             this.panelContext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.panelContext.Controls.Add(this.pictureBox1);
             this.panelContext.Controls.Add(this.label1);
             this.panelContext.Controls.Add(this.buttonBuyTicket);
             this.panelContext.Controls.Add(this.label3);
@@ -67,13 +68,23 @@ namespace Client.Tabs
             this.panelContext.Controls.Add(this.labelFilmDescription);
             this.panelContext.Controls.Add(this.label2);
             this.panelContext.Controls.Add(this.labelFilmName);
-            this.panelContext.Controls.Add(this.pictureBox1);
             this.panelContext.Location = new System.Drawing.Point(0, 35);
             this.panelContext.Margin = new System.Windows.Forms.Padding(12, 12, 28, 12);
             this.panelContext.Name = "panelContext";
             this.panelContext.Size = new System.Drawing.Size(800, 456);
             this.panelContext.TabIndex = 3;
             this.panelContext.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContext_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(198, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 21);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Name:";
             // 
             // buttonBuyTicket
             // 
@@ -144,23 +155,12 @@ namespace Client.Tabs
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Blue;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 230);
-            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.Size = new System.Drawing.Size(180, 218);
+            this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(198, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 21);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Name:";
             // 
             // TabFilm
             // 
@@ -186,7 +186,6 @@ namespace Client.Tabs
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelContext;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelFilmDescription;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelFilmName;
@@ -194,5 +193,6 @@ namespace Client.Tabs
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button buttonBuyTicket;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
