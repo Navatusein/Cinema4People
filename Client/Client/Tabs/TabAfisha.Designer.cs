@@ -45,9 +45,10 @@
             this.panelContext.AutoScroll = true;
             this.panelContext.AutoScrollMargin = new System.Drawing.Size(0, 12);
             this.panelContext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.panelContext.Location = new System.Drawing.Point(0, 35);
+            this.panelContext.Location = new System.Drawing.Point(0, 43);
+            this.panelContext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelContext.Name = "panelContext";
-            this.panelContext.Size = new System.Drawing.Size(800, 415);
+            this.panelContext.Size = new System.Drawing.Size(1067, 511);
             this.panelContext.TabIndex = 0;
             // 
             // panel1
@@ -56,9 +57,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.panel1.Controls.Add(this.buttonFilter);
-            this.panel1.Location = new System.Drawing.Point(220, 0);
+            this.panel1.Location = new System.Drawing.Point(293, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(580, 35);
+            this.panel1.Size = new System.Drawing.Size(773, 43);
             this.panel1.TabIndex = 1;
             // 
             // buttonFilter
@@ -70,11 +72,13 @@
             this.buttonFilter.ForeColor = System.Drawing.Color.Transparent;
             this.buttonFilter.ImageKey = "filter.png";
             this.buttonFilter.ImageList = this.imageList24;
-            this.buttonFilter.Location = new System.Drawing.Point(529, 0);
+            this.buttonFilter.Location = new System.Drawing.Point(705, 0);
+            this.buttonFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonFilter.Name = "buttonFilter";
-            this.buttonFilter.Size = new System.Drawing.Size(35, 35);
+            this.buttonFilter.Size = new System.Drawing.Size(47, 43);
             this.buttonFilter.TabIndex = 0;
             this.buttonFilter.UseVisualStyleBackColor = true;
+            this.buttonFilter.Click += new System.EventHandler(this.buttonFilter_Click);
             // 
             // imageList24
             // 
@@ -84,13 +88,14 @@
             // 
             // TabAfisha
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelContext);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TabAfisha";
             this.Text = "TabAfisha";
             this.Resize += new System.EventHandler(this.TabAfisha_Resize);

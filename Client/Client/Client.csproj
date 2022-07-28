@@ -72,6 +72,10 @@
     <Compile Include="Tabs\TabCheckout.Designer.cs">
       <DependentUpon>TabCheckout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\TabFilter.cs" />
+    <Compile Include="Tabs\TabFilter.Designer.cs">
+      <DependentUpon>TabFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\TabTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tabs\TabCheckout.resx">
       <DependentUpon>TabCheckout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabs\TabFilter.resx">
+      <DependentUpon>TabFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tabs\TabTemplate.resx">
       <DependentUpon>TabTemplate.cs</DependentUpon>

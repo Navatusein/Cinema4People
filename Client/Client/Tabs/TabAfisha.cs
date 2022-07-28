@@ -10,10 +10,27 @@ using System.Windows.Forms;
 
 namespace Client.Tabs
 {
+    //class MoviesDB
+    //{
+    //    public int Id { get; set; }
+    //    public string Title { set; get; }
+    //    public string TrailerLink { set; get; }
+    //    public string Description { set; get; }//could add actors as extra variable/field
+    //    public int Duration { set; get; }
+    //    public double Rating { set; get; }
+    //    public byte[] Poster { set; get; }
+    //    public string Genres { set; get; }
+    //}
     public partial class TabAfisha : Form
     {
+
+        List<MoviesDB> movies = new List<MoviesDB>();
+
+        public string movie { get; set; }
+
         int counter = 0;
         List<MyMovie> movies = new List<MyMovie>();
+
 
         private Size cardSize;
 
@@ -24,6 +41,9 @@ namespace Client.Tabs
             
             InitializeComponent();
 
+
+
+            movies.Add(new MoviesDB(){Title =  "Azazel" });
 
             movies.Add(new MyMovie() { Name = "Lol", Description = "That`s LOL "});
             movies.Add(new MyMovie() { Name = "Lol1", Description = "That`s LOL 1" });
@@ -47,7 +67,7 @@ namespace Client.Tabs
         {
             int cardsCount = 0;
     
-            int cardsInRow = panelContext.Width / cardSize.Width;
+            int cardsInRow = panelContext.Width / (cardSize.Width + 1);
 
             int locationX = ((panelContext.Width - 16) - (cardsInRow * cardSize.Width)) / 2;
             int locationY = 12;
@@ -102,7 +122,9 @@ namespace Client.Tabs
             label.AutoSize = false;
             label.Width = cardSize.Width - margin;
             label.Height = labelHeight;
+
             label.Text = movie.Name;
+
             label.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             label.TextAlign = ContentAlignment.MiddleCenter;
             label.ForeColor = Color.White;
@@ -126,6 +148,13 @@ namespace Client.Tabs
            
             this.DialogResult = DialogResult.OK;
             formMain.showFilm(movies[Convert.ToInt32(pb.Tag)]);
+        
+        }
+
+        private void buttonFilter_Click(object sender, EventArgs e)
+        {
+            TabFilter filter = new TabFilter(this.movies);
+            ShowDialog(filter);
          }
     }
 
@@ -133,6 +162,5 @@ namespace Client.Tabs
     {
         public string Name { get; set; }
         public string Description { get; set; }
-
     }
 }
