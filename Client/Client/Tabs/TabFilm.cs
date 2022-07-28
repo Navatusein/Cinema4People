@@ -13,10 +13,11 @@ namespace Client.Tabs
     public partial class TabFilm : Form
     {
         
-        public TabFilm(string movie)
+        public TabFilm(MyMovie movie)
         {
             InitializeComponent();
-            labelFilmName.Text = movie;
+            labelFilmName.Text = movie.Name;
+            labelFilmDescription.Text = movie.Description;
             this.TopLevel = false;
             this.Dock = DockStyle.Fill;
             this.TopMost = true;

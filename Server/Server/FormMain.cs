@@ -62,5 +62,7 @@ namespace Server
         {
             btAfisha.Enabled = true;
         }
+
+   
     }
 }
