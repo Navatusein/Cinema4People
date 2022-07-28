@@ -24,7 +24,6 @@ namespace Client.Tabs
     public partial class TabAfisha : Form
     {
 
-        List<MoviesDB> movies = new List<MoviesDB>();
 
         public string movie { get; set; }
 
@@ -43,7 +42,7 @@ namespace Client.Tabs
 
 
 
-            movies.Add(new MoviesDB(){Title =  "Azazel" });
+           // movies.Add(new MoviesDB() { Title = "Azazel" });
 
             movies.Add(new MyMovie() { Name = "Lol", Description = "That`s LOL "});
             movies.Add(new MyMovie() { Name = "Lol1", Description = "That`s LOL 1" });
@@ -153,8 +152,8 @@ namespace Client.Tabs
 
         private void buttonFilter_Click(object sender, EventArgs e)
         {
-            TabFilter filter = new TabFilter(this.movies);
-            ShowDialog(filter);
+            //TabFilter filter = new TabFilter(this.movies);
+            //ShowDialog(filter);
          }
     }
 

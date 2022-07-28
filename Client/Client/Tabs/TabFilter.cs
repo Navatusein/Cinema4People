@@ -10,17 +10,7 @@ using System.Windows.Forms;
 
 namespace Client.Tabs
 {
-    public class MoviesDB
-    {
-        public int Id { get; set; }
-        public string Title { set; get; }
-        public string TrailerLink { set; get; }
-        public string Description { set; get; }//could add actors as extra variable/field
-        public int Duration { set; get; }
-        public double Rating { set; get; }
-        public byte[] Poster { set; get; }
-        public string Genres { set; get; }
-    }
+   
     public partial class TabFilter: Form
     {
         List<MoviesDB> movies = new List<MoviesDB>();
@@ -87,5 +77,17 @@ namespace Client.Tabs
         {
 
         }
+    }
+
+    public class MoviesDB
+    {
+        public int Id { get; set; }
+        public string Title { set; get; }
+        public string TrailerLink { set; get; }
+        public string Description { set; get; }//could add actors as extra variable/field
+        public int Duration { set; get; }
+        public double Rating { set; get; }
+        public byte[] Poster { set; get; }
+        public string Genres { set; get; }
     }
 }
