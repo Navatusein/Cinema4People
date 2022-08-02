@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Client.Models;
 
 namespace Client.Tabs
 {
@@ -18,7 +19,7 @@ namespace Client.Tabs
         public string movie { get; set; }
 
         int counter = 0;
-        List<MyMovie> movies = new List<MyMovie>();
+        public List<MoviesDB> movies = new List<MoviesDB>();
 
 
         private Size cardSize;
@@ -28,12 +29,10 @@ namespace Client.Tabs
         public TabAfisha(FormMain formMain)
         {
             InitializeComponent();
-            movies.Add(new MoviesDB(){Title =  "Azazel" });
-
-            movies.Add(new MyMovie() { Name = "Lol", Description = "That`s LOL "});
-            movies.Add(new MyMovie() { Name = "Lol1", Description = "That`s LOL 1" });
-            movies.Add(new MyMovie() { Name = "Lol2", Description = "That`s LOL 2" });
-            movies.Add(new MyMovie() { Name = "Lol3", Description = "That`s LOL 3" });
+            movies.Add(new MoviesDB() { Title = "Lol", Description = "That`s LOL "});
+            movies.Add(new MoviesDB() { Title = "Lol1", Description = "That`s LOL 1" });
+            movies.Add(new MoviesDB() { Title = "Lol2", Description = "That`s LOL 2" });
+            movies.Add(new MoviesDB() { Title = "Lol3", Description = "That`s LOL 3" });
 
             this.formMain = formMain;
             this.TopLevel = false;
@@ -70,10 +69,10 @@ namespace Client.Tabs
                         FillCard(ref card, movies[j]);
 
                         locationX += cardSize.Width;
+
                     if (cardsCount >= movies.Count)
                         return;
 
-                    Panel card = CreateCard(new Point(locationX, locationY), movies[cardsCount]);
                     locationX += cardSize.Width;
                         panelContext.Controls.Add(card);
 
@@ -87,7 +86,7 @@ namespace Client.Tabs
             }
         }
 
-        private Panel CreateCard(Point location, MyMovie movie)
+        private Panel CreateCard(Point location)
         {
             int margin = 6;
             int labelHeight = 25;
@@ -115,7 +114,6 @@ namespace Client.Tabs
             label.Width = cardSize.Width - margin;
             label.Height = labelHeight;
 
-            label.Text = movie.Name;
             label.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             label.TextAlign = ContentAlignment.MiddleCenter;
             label.ForeColor = Color.White;
@@ -172,18 +170,8 @@ namespace Client.Tabs
             {
                 ReDraw(filter.Filtred);
             }
-        }
-            TabFilter filter = new TabFilter(this.movies);
-            ShowDialog(filter);
          }
     }
-
-    public class MyMovie
-    {
-        public string Name { get; set; }
-        public string Description { get; set; }
-    }
-
     public class Seans //Создать или подключить
     {
         int id;

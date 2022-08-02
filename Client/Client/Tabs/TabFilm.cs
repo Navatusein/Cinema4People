@@ -7,17 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Client.Models;
 
 namespace Client.Tabs
 {
     public partial class TabFilm : Form
     {
         
-        public TabFilm(MyMovie movie)
+        public TabFilm(MoviesDB movie)
         {
             InitializeComponent();
-            labelFilmName.Text = movie.Name;
+            labelFilmName.Text = movie.Title;
             labelFilmDescription.Text = movie.Description;
             this.TopLevel = false;
             this.Dock = DockStyle.Fill;

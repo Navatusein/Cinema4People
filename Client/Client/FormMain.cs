@@ -9,12 +9,13 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Client.Models;
 
 namespace Client
 {
     public partial class FormMain : Form
     {
-        MyMovie lastMovie;
+        MoviesDB lastMovie;
         Button lastButton;
         public FormMain()
         {
@@ -82,7 +83,7 @@ namespace Client
             }
         }
         
-        public void showFilm(MyMovie movie)
+        public void showFilm(MoviesDB movie)
         {
             lastMovie = movie;
             TabAfisha temp = panelForm.Controls[0] as TabAfisha;
