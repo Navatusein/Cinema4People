@@ -30,6 +30,7 @@ namespace Client.Tabs
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelContext = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonBuyTicket = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,7 +38,6 @@ namespace Client.Tabs
             this.labelFilmDescription = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelFilmName = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContext.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +75,15 @@ namespace Client.Tabs
             this.panelContext.TabIndex = 3;
             this.panelContext.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContext_Paint);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(180, 218);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -100,6 +109,7 @@ namespace Client.Tabs
             this.buttonBuyTicket.TabIndex = 8;
             this.buttonBuyTicket.Text = "Buy Ticket";
             this.buttonBuyTicket.UseVisualStyleBackColor = false;
+            this.buttonBuyTicket.Click += new System.EventHandler(this.buttonBuyTicket_Click);
             // 
             // label3
             // 
@@ -152,15 +162,6 @@ namespace Client.Tabs
             this.labelFilmName.Size = new System.Drawing.Size(255, 64);
             this.labelFilmName.TabIndex = 3;
             this.labelFilmName.Text = "Some Film Name\r\n\r\n";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 218);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
             // 
             // TabFilm
             // 
