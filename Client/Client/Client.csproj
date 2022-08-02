@@ -79,6 +79,18 @@
     <Compile Include="Tabs\TabFilter.Designer.cs">
       <DependentUpon>TabFilter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\TabRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabs\TabRoom.Designer.cs">
+      <DependentUpon>TabRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tabs\TabSelectRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tabs\TabSelectRoom.Designer.cs">
+      <DependentUpon>TabSelectRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\TabTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +120,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tabs\TabFilter.resx">
       <DependentUpon>TabFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabs\TabRoom.resx">
+      <DependentUpon>TabRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tabs\TabSelectRoom.resx">
+      <DependentUpon>TabSelectRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tabs\TabTemplate.resx">
       <DependentUpon>TabTemplate.cs</DependentUpon>

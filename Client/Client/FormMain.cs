@@ -86,15 +86,12 @@ namespace Client
         public void showFilm(MoviesDB movie)
         {
             lastMovie = movie;
-            TabAfisha temp = panelForm.Controls[0] as TabAfisha;
 
-            if (temp.DialogResult == DialogResult.OK)
-            {
-                panelForm.Controls.Clear();
-                TabFilm tab = new TabFilm(movie);
-                panelForm.Controls.Add(tab);
-                tab.Show();
-            }
+            panelForm.Controls.Clear();
+            TabFilm tab = new TabFilm(movie);
+            panelForm.Controls.Add(tab);
+
+            tab.Show();
         }
     }
 }
