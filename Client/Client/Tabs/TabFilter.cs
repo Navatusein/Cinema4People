@@ -1,11 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace Client.Tabs
 {
-
     public partial class TabFilter : Form
     {
         List<MoviesDB> movies;
@@ -186,7 +185,6 @@ namespace Client.Tabs
         public double Rating { set; get; }
         public byte[] Poster { set; get; }
         public string Genres { set; get; }
-
         public DateTime time { get; set; }
     }
 }

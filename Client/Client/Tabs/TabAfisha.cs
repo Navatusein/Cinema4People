@@ -14,7 +14,6 @@ namespace Client.Tabs
     public partial class TabAfisha : Form
     {
 
-        List<MoviesDB> movies = new List<MoviesDB>();
 
         public string movie { get; set; }
 
