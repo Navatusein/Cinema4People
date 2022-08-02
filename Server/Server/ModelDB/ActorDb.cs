@@ -16,14 +16,14 @@ namespace Server.ModelDB
 
         [Key]
         public int Id { get; set; }
-        public string ActorName { get; set; }
-        public string ActorRole { get; set; }
+        public string ActorFirstName { get; set; }
+        public string ActorLastName { get; set; }
         public byte[] ActorPhoto { get; set; }
 
         public virtual ICollection<ActorToMovieDb> ActorsToMovies { get; set; }
         public override string ToString()
         {
-            return String.Format("{0} ; {1} ; {2}", Id, ActorName, ActorRole);
+            return String.Format("{0} ; {1} ; {2}", Id, ActorFirstName, ActorLastName);
         }
 
     }
