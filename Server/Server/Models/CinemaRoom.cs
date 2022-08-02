@@ -10,6 +10,7 @@ namespace Server.Models
     /// <summary>
     /// Клас комнаты
     /// </summary>
+    [Serializable]
     public class CinemaRoom
     {
         // зделать ценовую политику
