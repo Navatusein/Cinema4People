@@ -31,6 +31,10 @@ namespace Client.Tabs
             movies.Add(new MoviesDB() { Title = "Lol1", Description = "That`s LOL 1" });
             movies.Add(new MoviesDB() { Title = "Lol2", Description = "That`s LOL 2" });
             movies.Add(new MoviesDB() { Title = "Lol3", Description = "That`s LOL 3" });
+            movies.Add(new MoviesDB() { Title = "Lol4", Description = "That`s LOL 4" });
+            movies.Add(new MoviesDB() { Title = "Lol5", Description = "That`s LOL 5" });
+            movies.Add(new MoviesDB() { Title = "Lol6", Description = "That`s LOL 6" });
+            movies.Add(new MoviesDB() { Title = "Lol7", Description = "That`s LOL 7" });
 
             InitializeComponent();
      
@@ -155,13 +159,16 @@ namespace Client.Tabs
         private void buttonFilter_Click(object sender, EventArgs e)
         {
             List<Seans> s = new List<Seans>();
+
             TabFilter filter = new TabFilter(this.movies, s);
 
-            if (ShowDialog(filter) == DialogResult.OK)
-            {
-                ReDraw(filter.Filtred);
-            }
-         }
+            formMain.panelForm.Controls.Clear();
+            formMain.panelForm.Controls.Add(filter);
+
+            filter.Show();
+
+            //ReDraw(filter.Filtred);
+        }
     }
     public class Seans //Создать или подключить
     {

@@ -109,11 +109,11 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panelForm;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btHistory;
         private System.Windows.Forms.Button btMain;
         private System.Windows.Forms.Button btBack;
+        public System.Windows.Forms.Panel panelForm;
     }
 }
 
