@@ -13,24 +13,35 @@ namespace Client.Tabs
 {
     public partial class TabAfisha : Form
     {
+
         List<MoviesDB> movies = new List<MoviesDB>();
 
         public string movie { get; set; }
 
+        int counter = 0;
+        List<MyMovie> movies = new List<MyMovie>();
+
+
         private Size cardSize;
+
+        private FormMain formMain;
 
         public TabAfisha(FormMain formMain)
         {
             InitializeComponent();
+            movies.Add(new MoviesDB(){Title =  "Azazel" });
 
+            movies.Add(new MyMovie() { Name = "Lol", Description = "That`s LOL "});
+            movies.Add(new MyMovie() { Name = "Lol1", Description = "That`s LOL 1" });
+            movies.Add(new MyMovie() { Name = "Lol2", Description = "That`s LOL 2" });
+            movies.Add(new MyMovie() { Name = "Lol3", Description = "That`s LOL 3" });
+
+            this.formMain = formMain;
             this.TopLevel = false;
             this.Dock = DockStyle.Fill;
             this.TopMost = true;
 
-            movies.Add(new MoviesDB() { Title =  "Azazel" });
-
             cardSize = new Size(160, 200);
-
             ReDraw(movies);
         }
 
@@ -46,6 +57,8 @@ namespace Client.Tabs
             panelContext.Controls.Clear();
 
             if (movies != null)
+           
+            while(true)
             {
                 int movieCounter = movie.Length;
 
@@ -58,7 +71,11 @@ namespace Client.Tabs
                         FillCard(ref card, movies[j]);
 
                         locationX += cardSize.Width;
+                    if (cardsCount >= movies.Count)
+                        return;
 
+                    Panel card = CreateCard(new Point(locationX, locationY), movies[cardsCount]);
+                    locationX += cardSize.Width;
                         panelContext.Controls.Add(card);
 
                         cardsCount++;
@@ -71,7 +88,7 @@ namespace Client.Tabs
             }
         }
 
-        private Panel CreateCard(Point location)
+        private Panel CreateCard(Point location, MyMovie movie)
         {
             int margin = 6;
             int labelHeight = 25;
@@ -88,6 +105,9 @@ namespace Client.Tabs
             poster.Height = cardSize.Height - margin - labelHeight;
             poster.Location = new Point(3, 3);
             poster.BackColor = Color.DarkGray;
+            poster.Tag = counter;
+            counter++;
+            poster.Click += OpenFilm;
 
             Label label = new Label();
             label.Name = card.Controls.Count.ToString();
@@ -95,11 +115,12 @@ namespace Client.Tabs
             label.AutoSize = false;
             label.Width = cardSize.Width - margin;
             label.Height = labelHeight;
+
+            label.Text = movie.Name;
             label.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             label.TextAlign = ContentAlignment.MiddleCenter;
             label.ForeColor = Color.White;
             label.BorderStyle = BorderStyle.FixedSingle;
-            label.Click += LB_Click;
 
             card.Controls.Add(poster);
             card.Controls.Add(label);
@@ -131,11 +152,16 @@ namespace Client.Tabs
             ReDraw(movies);
         }
 
-        protected void LB_Click(object sender, EventArgs e)
+        protected void OpenFilm(object sender, EventArgs e)
         {
             Label label = sender as Label;
             this.DialogResult = DialogResult.OK;
             this.Close();
+            var pb = sender as PictureBox;
+           
+            this.DialogResult = DialogResult.OK;
+            formMain.showFilm(movies[Convert.ToInt32(pb.Tag)]);
+        
         }
 
         private void buttonFilter_Click(object sender, EventArgs e)
@@ -148,6 +174,15 @@ namespace Client.Tabs
                 ReDraw(filter.Filtred);
             }
         }
+            TabFilter filter = new TabFilter(this.movies);
+            ShowDialog(filter);
+         }
+    }
+
+    public class MyMovie
+    {
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 
     public class Seans //Создать или подключить
