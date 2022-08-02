@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,17 +11,6 @@ using System.Windows.Forms;
 
 namespace Client.Tabs
 {
-    //class MoviesDB
-    //{
-    //    public int Id { get; set; }
-    //    public string Title { set; get; }
-    //    public string TrailerLink { set; get; }
-    //    public string Description { set; get; }//could add actors as extra variable/field
-    //    public int Duration { set; get; }
-    //    public double Rating { set; get; }
-    //    public byte[] Poster { set; get; }
-    //    public string Genres { set; get; }
-    //}
     public partial class TabAfisha : Form
     {
 
@@ -37,12 +27,8 @@ namespace Client.Tabs
 
         public TabAfisha(FormMain formMain)
         {
-            
             InitializeComponent();
-
-
-
-           // movies.Add(new MoviesDB() { Title = "Azazel" });
+            movies.Add(new MoviesDB(){Title =  "Azazel" });
 
             movies.Add(new MyMovie() { Name = "Lol", Description = "That`s LOL "});
             movies.Add(new MyMovie() { Name = "Lol1", Description = "That`s LOL 1" });
@@ -55,14 +41,10 @@ namespace Client.Tabs
             this.TopMost = true;
 
             cardSize = new Size(160, 200);
-
-            ReDraw();
-
-
-
+            ReDraw(movies);
         }
 
-        private void ReDraw()
+        private void ReDraw(List<MoviesDB> movies)
         {
             int cardsCount = 0;
     
@@ -72,24 +54,36 @@ namespace Client.Tabs
             int locationY = 12;
 
             panelContext.Controls.Clear();
-            
+
+            if (movies != null)
+           
             while(true)
             {
-                for (int j = 0; j < cardsInRow; j++)
+                int movieCounter = movie.Length;
+
+                while (movieCounter > 0)
                 {
+                    for (int j = 0; j < cardsInRow; j++)
+                    {
+                        Panel card = CreateCard(new Point(locationX, locationY));
+
+                        FillCard(ref card, movies[j]);
+
+                        locationX += cardSize.Width;
                     if (cardsCount >= movies.Count)
                         return;
 
                     Panel card = CreateCard(new Point(locationX, locationY), movies[cardsCount]);
                     locationX += cardSize.Width;
+                        panelContext.Controls.Add(card);
 
-                    panelContext.Controls.Add(card);
+                        cardsCount++;
+                        movieCounter--;
+                    }
 
-                    cardsCount++;
+                    locationX = ((panelContext.Width - 16) - (cardsInRow * cardSize.Width)) / 2;
+                    locationY += cardSize.Height;
                 }
-
-                locationX = ((panelContext.Width - 16) - (cardsInRow * cardSize.Width)) / 2;
-                locationY += cardSize.Height;
             }
         }
 
@@ -114,7 +108,6 @@ namespace Client.Tabs
             counter++;
             poster.Click += OpenFilm;
 
-
             Label label = new Label();
             label.Name = card.Controls.Count.ToString();
             label.Location = new Point(3, (poster.Location.X + poster.Height));
@@ -123,12 +116,10 @@ namespace Client.Tabs
             label.Height = labelHeight;
 
             label.Text = movie.Name;
-
             label.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             label.TextAlign = ContentAlignment.MiddleCenter;
             label.ForeColor = Color.White;
             label.BorderStyle = BorderStyle.FixedSingle;
-
 
             card.Controls.Add(poster);
             card.Controls.Add(label);
@@ -136,13 +127,35 @@ namespace Client.Tabs
             return card;
         }
 
+        private void FillCard(ref Panel panel, MoviesDB movie)
+        {
+            foreach (var element in panel.Controls)
+            {
+                if (element is PictureBox)
+                {
+                    using (var ms = new MemoryStream(movie.Poster))
+                    {
+                        (element as PictureBox).Image = Image.FromStream(ms);
+                    }
+                }
+
+                if (element is Label)
+                {
+                    (element as Label).Text = movie.Title;
+                }
+            }
+        }
+
         private void TabAfisha_Resize(object sender, EventArgs e)
         {
-            ReDraw();
+            ReDraw(movies);
         }
 
         protected void OpenFilm(object sender, EventArgs e)
         {
+            Label label = sender as Label;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
             var pb = sender as PictureBox;
            
             this.DialogResult = DialogResult.OK;
@@ -152,8 +165,16 @@ namespace Client.Tabs
 
         private void buttonFilter_Click(object sender, EventArgs e)
         {
-            //TabFilter filter = new TabFilter(this.movies);
-            //ShowDialog(filter);
+            List<Seans> s = new List<Seans>();
+            TabFilter filter = new TabFilter(this.movies, s);
+
+            if (ShowDialog(filter) == DialogResult.OK)
+            {
+                ReDraw(filter.Filtred);
+            }
+        }
+            TabFilter filter = new TabFilter(this.movies);
+            ShowDialog(filter);
          }
     }
 
@@ -161,5 +182,13 @@ namespace Client.Tabs
     {
         public string Name { get; set; }
         public string Description { get; set; }
+    }
+
+    public class Seans //Создать или подключить
+    {
+        int id;
+        public List<DateTime> dateTimes;
+        string room;
+        public MoviesDB movie;
     }
 }

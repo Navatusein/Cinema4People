@@ -1,81 +1,177 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Client.Tabs
 {
-   
-    public partial class TabFilter: Form
+    public partial class TabFilter : Form
     {
-        List<MoviesDB> movies = new List<MoviesDB>();
-        List<MoviesDB> sortedMovies = new List<MoviesDB>();
+        List<MoviesDB> movies;
+        List<MoviesDB> filteredMovies;
+        List<Seans> seanses;
 
-        public TabFilter(ref List<MoviesDB> moviesA)
+        public List<MoviesDB> Filtred
+        {
+            get { return filteredMovies; }
+        }
+
+
+        public TabFilter(List<MoviesDB> movies, List<Seans> seanses)
         {
             InitializeComponent();
+
+            dateTimePickerMovieF.MinDate = DateTime.Today;
+            this.movies = movies;
+            this.seanses = seanses;
+            filteredMovies = new List<MoviesDB>();
 
             this.TopLevel = false;
             this.Dock = DockStyle.Fill;
             this.TopMost = true;
-
-            movies = moviesA;
-            
         }
 
-        private void cBMovieGenres_SelectedIndexChanged(object sender, EventArgs e)
+        List<string> GetGanres()
         {
-            string genre = cBMovieGenres.SelectedItem.ToString();
-            foreach (var m in movies)
+            //Supposed to get from db
+            List<string> genres = new List<string>();
+            genres.AddRange(new string[] 
             {
-                if (sortedMovies.Count.Equals(0))
-                {
-                    if (m.Genres.Equals(genre))
-                    {
-                        sortedMovies.Add(m);
-                    }
-                }
-            }
+              "Action",
+              "Comedy",
+              "Thriller",
+              "Horror",
+              "Documentary",
+              "Detective",
+              "Criminal",
+              ""
+            });
+
+            return genres;
         }
 
-        private void tbMovieTitleF_TextChanged(object sender, EventArgs e)
-        {
-            foreach(var m in movies)
-            {
-                if(sortedMovies.Count.Equals(0))
-                {
-                    if(tbMovieTitleF.Text.Equals(m.Title))//when we would know class, we should rewrite it
-                                    {
-                                        sortedMovies.Add(m);
-                                    }
-                }
-                
-            }
-        }
-
-        private void dateTimePickerMovieF_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btTitleSort_Click(object sender, EventArgs e)
         {
+            filteredMovies = movies.OrderBy(o => o.Title).ToList();
 
+            if (rbDesc.Checked)
+                filteredMovies.Reverse();
+
+            this.Close();
         }
 
         private void btTimeSort_Click(object sender, EventArgs e)
         {
+            filteredMovies = movies.OrderBy(o => o.Duration).ToList();
 
+            if (rbDesc.Checked)
+                filteredMovies.Reverse();
+
+            this.Close();
         }
 
         private void btRatingSort_Click(object sender, EventArgs e)
         {
+            filteredMovies = movies.OrderBy(o => o.Rating).ToList();
 
+            if (rbDesc.Checked)
+                filteredMovies.Reverse();
+
+            this.Close();
+        }
+
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            filteredMovies.Clear();
+
+            this.Close();
+        }
+
+        private void tbMovieTitleF_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (filteredMovies.Count.Equals(0))
+                {
+                    foreach (var m in movies)
+                    {
+                        if (tbMovieTitleF.Text.Equals(m.Title) || tbMovieTitleF.Text.Contains(m.Title))
+                        {
+                            filteredMovies.Add(m);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var filteredM in filteredMovies)
+                    {
+                        if (!tbMovieTitleF.Text.Equals(filteredM.Title) || !tbMovieTitleF.Text.Contains(filteredM.Title))
+                        {
+                            filteredMovies.Remove(filteredM);
+                        }
+                    }
+                }
+            }
+            this.Close();
+        }
+
+        private void dateTimePickerMovieF_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (filteredMovies.Count.Equals(0))
+                {
+                    foreach (var m in seanses)
+                    {
+                        if (m.dateTimes.Contains(dateTimePickerMovieF.Value))
+                        {
+                            filteredMovies.Add(m.movie);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var m in seanses)
+                    {
+                        if (!m.dateTimes.Contains(dateTimePickerMovieF.Value))
+                        {
+                            filteredMovies.Remove(m.movie);
+                        }
+                    }
+                }
+            }
+            this.Close();
+        }
+
+        private void cBMovieGenres_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string genre = cBMovieGenres.SelectedItem.ToString();
+
+                if (filteredMovies.Count.Equals(0))
+                {
+                    foreach (var m in movies)
+                    {
+                        if (genre.Equals(m.Genres))
+                        {
+                            filteredMovies.Add(m);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (var filteredM in filteredMovies)
+                    {
+                        if (!genre.Equals(filteredM.Genres))
+                        {
+                            filteredMovies.Remove(filteredM);
+                        }
+                    }
+                }
+            }
+            this.Close();
         }
     }
 
@@ -89,5 +185,6 @@ namespace Client.Tabs
         public double Rating { set; get; }
         public byte[] Poster { set; get; }
         public string Genres { set; get; }
+        public DateTime time { get; set; }
     }
 }
